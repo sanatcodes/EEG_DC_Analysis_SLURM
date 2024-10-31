@@ -3,31 +3,17 @@ import torch
 import wandb
 import numpy as np
 import matplotlib.pyplot as plt
+from torch.utils.data import DataLoader
 from sklearn.cluster import KMeans, DBSCAN, HDBSCAN
 from sklearn.metrics import silhouette_score, calinski_harabasz_score
-from sklearn.decomposition import PCA
-from sklearn.manifold import TSNE
 from sklearn.preprocessing import StandardScaler
+from sklearn.neighbors import NearestNeighbors
 from datetime import datetime
-import argparse
 from pathlib import Path
 from model.cae import CAE
 from dataloader import TopomapDataset
 from torch.utils.data import DataLoader
-import torchvision.transforms as transforms
-
-def setup_wandb(args):
-    """Initialize W&B logging"""
-    return wandb.init(
-        project="deep-clustering-analysis",
-        config={
-            "model_path": args.model_path,
-            "latent_dim": args.latent_dim,
-            "batch_size": args.batch_size,
-            "kmeans_k_values": args.kmeans_k_values,
-            "hdbscan_min_sizes": args.hdbscan_min_sizes,
-        }
-    )
+from sklearn.decomposition import PCA
 
 
 def create_dataloader(data_path, batch_size, num_workers=4):
@@ -210,9 +196,11 @@ def plot_kdistance_graph(distances, recommended_eps):
 
 def run_dbscan_analysis(latent_spaces, eps_values=None, min_samples_values=None):
     """Run DBSCAN clustering analysis with different parameters"""
+    # Always estimate eps and get distances for plotting
+    distances, recommended_eps = estimate_dbscan_eps(latent_spaces)
+    
+    # Set default values if not provided
     if eps_values is None or min_samples_values is None:
-        # Estimate good eps value
-        distances, recommended_eps = estimate_dbscan_eps(latent_spaces)
         eps_range = np.linspace(recommended_eps * 0.5, recommended_eps * 1.5, 5)
         eps_values = eps_range if eps_values is None else eps_values
         min_samples_values = [3, 5, 10] if min_samples_values is None else min_samples_values
@@ -283,35 +271,48 @@ def run_dbscan_analysis(latent_spaces, eps_values=None, min_samples_values=None)
     wandb.log({"dbscan_metrics": metrics_table})
     return metrics
 
-def main(args):
+def run_clustering_analysis(config):
+    """Main function that runs all clustering analyses with wandb config parameters"""
     # Set up device
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
-    # Initialize wandb
-    run = setup_wandb(args)
-
-    dataloader = create_dataloader(args.data_path, args.batch_size)
+    # Create dataloader
+    dataloader = create_dataloader(
+        data_path=config.data_path,
+        batch_size=config.batch_size,
+        num_workers=config.num_workers
+    )
     
     # Load model
-    model = load_model(args.model_path, device, args.latent_dim)
-    
-    # Load your dataloader here
-    # dataloader = create_dataloader(args.data_path, args.batch_size)
+    model = load_model(
+        model_path=config.model_path,
+        device=device,
+        latent_dim=config.latent_dim
+    )
     
     # Extract latent spaces
     latent_spaces = extract_latent_spaces(model, dataloader, device)
     
-      # Scale the latent spaces for consistent distance metrics
+    # Scale the latent spaces for consistent distance metrics
     scaler = StandardScaler()
     scaled_latent_spaces = scaler.fit_transform(latent_spaces)
     
     # Run clustering analyses
-    kmeans_metrics = run_kmeans_analysis(scaled_latent_spaces, args.kmeans_k_values)
-    hdbscan_metrics = run_hdbscan_analysis(scaled_latent_spaces, args.hdbscan_min_sizes)
-    dbscan_metrics = run_dbscan_analysis(scaled_latent_spaces, 
-                                       args.dbscan_eps_values,
-                                       args.dbscan_min_samples)
+    kmeans_metrics = run_kmeans_analysis(
+        scaled_latent_spaces,
+        config.kmeans_k_values
+    )
     
+    hdbscan_metrics = run_hdbscan_analysis(
+        scaled_latent_spaces,
+        config.hdbscan_min_sizes
+    )
+    
+    dbscan_metrics = run_dbscan_analysis(
+        scaled_latent_spaces,
+        config.dbscan_eps_values if hasattr(config, 'dbscan_eps_values') else None,
+        config.dbscan_min_samples if hasattr(config, 'dbscan_min_samples') else None
+    )
     
     # Log final summary metrics
     wandb.run.summary.update({
@@ -321,24 +322,8 @@ def main(args):
         "completion_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     })
     
-    wandb.finish()
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Deep Clustering Analysis')
-    parser.add_argument('--model_path', type=str, required=True,
-                      help='Path to the pretrained model checkpoint')
-    parser.add_argument('--data_path', type=str, required=True,
-                      help='Path to the dataset')
-    parser.add_argument('--batch_size', type=int, default=32,
-                      help='Batch size for data loading')
-    parser.add_argument('--latent_dim', type=int, default=6,
-                      help='Dimension of the latent space')
-    parser.add_argument('--kmeans_k_values', type=int, nargs='+',
-                      default=[2, 3, 4, 5, 6, 9, 12],
-                      help='K values to try for K-means clustering')
-    parser.add_argument('--hdbscan_min_sizes', type=int, nargs='+',
-                      default=[3, 5, 10],
-                      help='Minimum cluster sizes to try for HDBSCAN')
-    
-    args = parser.parse_args()
-    main(args)
+    return {
+        'kmeans_metrics': kmeans_metrics,
+        'hdbscan_metrics': hdbscan_metrics,
+        'dbscan_metrics': dbscan_metrics
+    }

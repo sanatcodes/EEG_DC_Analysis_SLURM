@@ -1,0 +1,5 @@
+/venv
+/wandb
+/data
+/logs
+/artifacts
