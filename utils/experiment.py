@@ -12,6 +12,9 @@ from datetime import datetime
 import argparse
 from pathlib import Path
 from model.cae import CAE
+from dataloader import TopomapDataset
+from torch.utils.data import DataLoader
+import torchvision.transforms as transforms
 
 def setup_wandb(args):
     """Initialize W&B logging"""
@@ -24,6 +27,18 @@ def setup_wandb(args):
             "kmeans_k_values": args.kmeans_k_values,
             "hdbscan_min_sizes": args.hdbscan_min_sizes,
         }
+    )
+
+
+def create_dataloader(data_path, batch_size, num_workers=4):
+    """Create dataloader for the topomap dataset"""
+    dataset = TopomapDataset(folder_path=data_path)
+    return DataLoader(
+        dataset,
+        batch_size=batch_size,
+        shuffle=False, 
+        num_workers=num_workers,
+        pin_memory=True
     )
 
 def load_model(model_path, device, latent_dim=6):
@@ -274,6 +289,8 @@ def main(args):
     
     # Initialize wandb
     run = setup_wandb(args)
+
+    dataloader = create_dataloader(args.data_path, args.batch_size)
     
     # Load model
     model = load_model(args.model_path, device, args.latent_dim)
