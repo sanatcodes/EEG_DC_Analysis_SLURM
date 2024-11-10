@@ -3,7 +3,6 @@ import torch
 import wandb
 import numpy as np
 import matplotlib.pyplot as plt
-from torch.utils.data import DataLoader
 from sklearn.cluster import KMeans, DBSCAN, HDBSCAN
 from sklearn.metrics import silhouette_score, calinski_harabasz_score
 from sklearn.preprocessing import StandardScaler
@@ -11,7 +10,7 @@ from sklearn.neighbors import NearestNeighbors
 from datetime import datetime
 from pathlib import Path
 from model.cae import CAE
-from dataloader import TopomapDataset
+from utils.dataloader import TopomapDataset
 from torch.utils.data import DataLoader
 from sklearn.decomposition import PCA
 

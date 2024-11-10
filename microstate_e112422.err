@@ -1,0 +1,2558 @@
+wandb: Using wandb-core as the SDK backend. Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: sanat-thukral (cognetive-load-research). Use `wandb login --relogin` to force relogin
+wandb: Agent Starting Run: i5vq04oq with config:
+wandb: 	batch_size: 40
+wandb: 	data_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/dataset
+wandb: 	dbscan_eps_values: [0.1, 0.2, 0.3]
+wandb: 	dbscan_min_samples: [3, 5, 10]
+wandb: 	dropout_conv: 0.23037448546520012
+wandb: 	dropout_fc: 0.42793365261644367
+wandb: 	hdbscan_min_sizes: [3, 5, 10]
+wandb: 	kmeans_k_values: [2, 3, 4]
+wandb: 	latent_dim: 4
+wandb: 	leaky_relu_slope: 0.01
+wandb: 	learning_rate: 0.00692440691884721
+wandb: 	model_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/model_training_SLURM/artifacts/obj/md5/9a/5026db2161df3761cf884fc01cd090
+wandb: 	num_epochs: 100
+wandb: 	num_workers: 4
+wandb: 	optimizer: adam
+wandb: 	scheduler_factor: 0.1
+wandb: 	scheduler_patience: 10
+wandb: 	weight_decay: 6.12680524937952e-06
+wandb: Tracking run with wandb version 0.18.5
+wandb: Run data is saved locally in /home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/wandb/run-20241031_184002-i5vq04oq
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run easy-sweep-1
+wandb: ⭐️ View project at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: 🧹 View sweep at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/sweeps/cwzycdl4
+wandb: 🚀 View run at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/i5vq04oq
+/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py:32: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path, map_location=device)
+wandb: - 2.832 MB of 3.475 MB uploadedwandb: \ 3.475 MB of 3.475 MB uploadedwandb: | 3.478 MB of 3.478 MB uploadedwandb: / 3.478 MB of 3.478 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette ▁
+wandb:            hdbscan/minsize10hdbscan/silhouette ▁
+wandb:             hdbscan/minsize3hdbscan/silhouette ▁
+wandb:             hdbscan/minsize5hdbscan/silhouette ▁
+wandb:                             hdbscan/n_clusters █▂▁
+wandb:                            hdbscan/noise_ratio ▁██
+wandb:                       kmeans/calinski_harabasz █▄▁
+wandb:                                 kmeans/inertia █▃▁
+wandb:                              kmeans/silhouette █▅▁
+wandb: 
+wandb: Run summary:
+wandb:                         best_dbscan_silhouette 1
+wandb:                        best_hdbscan_silhouette 0.3614
+wandb:                         best_kmeans_silhouette 0.29277
+wandb:                                completion_time 2024-10-31 18:42:59
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette 1
+wandb:  dbscan/eps_0.1_minsamples_3/calinski_harabasz 412999.09375
+wandb:         dbscan/eps_0.1_minsamples_3/n_clusters 3
+wandb:        dbscan/eps_0.1_minsamples_3/noise_ratio 0.96613
+wandb:         dbscan/eps_0.1_minsamples_3/silhouette 0.99798
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz 2037224723972096.0
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters 2
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio 0.96855
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette 1
+wandb:  dbscan/eps_0.2_minsamples_3/calinski_harabasz 856.84363
+wandb:         dbscan/eps_0.2_minsamples_3/n_clusters 24
+wandb:        dbscan/eps_0.2_minsamples_3/noise_ratio 0.8879
+wandb:         dbscan/eps_0.2_minsamples_3/silhouette 0.67753
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz 4574.26465
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters 5
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio 0.95
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette 0.89884
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz 1454.44116
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters 6
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio 0.91532
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette 0.67983
+wandb:  dbscan/eps_0.3_minsamples_3/calinski_harabasz 76.43484
+wandb:         dbscan/eps_0.3_minsamples_3/n_clusters 51
+wandb:        dbscan/eps_0.3_minsamples_3/noise_ratio 0.62823
+wandb:         dbscan/eps_0.3_minsamples_3/silhouette 0.17363
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz 154.35797
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters 16
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio 0.80242
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette 0.35716
+wandb:            hdbscan/minsize10hdbscan/silhouette 0.33062
+wandb:             hdbscan/minsize3hdbscan/silhouette 0.3614
+wandb:             hdbscan/minsize5hdbscan/silhouette 0.2366
+wandb:                             hdbscan/n_clusters 4
+wandb:                            hdbscan/noise_ratio 0.57419
+wandb:                       kmeans/calinski_harabasz 421.32147
+wandb:                                 kmeans/inertia 2452.25879
+wandb:                              kmeans/silhouette 0.23405
+wandb: 
+wandb: 🚀 View run easy-sweep-1 at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/i5vq04oq
+wandb: ⭐️ View project at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: Synced 5 W&B file(s), 0 media file(s), 23 artifact file(s) and 4 other file(s)
+wandb: Find logs at: ./wandb/run-20241031_184002-i5vq04oq/logs
+wandb: Agent Starting Run: bvrac5t2 with config:
+wandb: 	batch_size: 40
+wandb: 	data_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/dataset
+wandb: 	dbscan_eps_values: [0.1, 0.2, 0.3]
+wandb: 	dbscan_min_samples: [3, 5, 10]
+wandb: 	dropout_conv: 0.23037448546520012
+wandb: 	dropout_fc: 0.42793365261644367
+wandb: 	hdbscan_min_sizes: [3, 5, 10]
+wandb: 	kmeans_k_values: [4, 5, 6]
+wandb: 	latent_dim: 4
+wandb: 	leaky_relu_slope: 0.01
+wandb: 	learning_rate: 0.00692440691884721
+wandb: 	model_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/model_training_SLURM/artifacts/obj/md5/9a/5026db2161df3761cf884fc01cd090
+wandb: 	num_epochs: 100
+wandb: 	num_workers: 4
+wandb: 	optimizer: adam
+wandb: 	scheduler_factor: 0.1
+wandb: 	scheduler_patience: 10
+wandb: 	weight_decay: 6.12680524937952e-06
+wandb: Tracking run with wandb version 0.18.5
+wandb: Run data is saved locally in /home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/wandb/run-20241031_184310-bvrac5t2
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run zany-sweep-2
+wandb: ⭐️ View project at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: 🧹 View sweep at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/sweeps/cwzycdl4
+wandb: 🚀 View run at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/bvrac5t2
+/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py:32: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path, map_location=device)
+wandb: - 3.149 MB of 3.493 MB uploadedwandb: \ 3.493 MB of 3.493 MB uploadedwandb: | 3.493 MB of 3.493 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette ▁
+wandb:            hdbscan/minsize10hdbscan/silhouette ▁
+wandb:             hdbscan/minsize3hdbscan/silhouette ▁
+wandb:             hdbscan/minsize5hdbscan/silhouette ▁
+wandb:                             hdbscan/n_clusters █▂▁
+wandb:                            hdbscan/noise_ratio ▁██
+wandb:                       kmeans/calinski_harabasz █▁▅
+wandb:                                 kmeans/inertia █▅▁
+wandb:                              kmeans/silhouette ▂▁█
+wandb: 
+wandb: Run summary:
+wandb:                         best_dbscan_silhouette 1
+wandb:                        best_hdbscan_silhouette 0.3614
+wandb:                         best_kmeans_silhouette 0.24663
+wandb:                                completion_time 2024-10-31 18:44:19
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette 1
+wandb:  dbscan/eps_0.1_minsamples_3/calinski_harabasz 412999.09375
+wandb:         dbscan/eps_0.1_minsamples_3/n_clusters 3
+wandb:        dbscan/eps_0.1_minsamples_3/noise_ratio 0.96613
+wandb:         dbscan/eps_0.1_minsamples_3/silhouette 0.99798
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz 2037224723972096.0
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters 2
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio 0.96855
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette 1
+wandb:  dbscan/eps_0.2_minsamples_3/calinski_harabasz 856.84363
+wandb:         dbscan/eps_0.2_minsamples_3/n_clusters 24
+wandb:        dbscan/eps_0.2_minsamples_3/noise_ratio 0.8879
+wandb:         dbscan/eps_0.2_minsamples_3/silhouette 0.67753
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz 4574.26465
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters 5
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio 0.95
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette 0.89884
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz 1454.44116
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters 6
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio 0.91532
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette 0.67983
+wandb:  dbscan/eps_0.3_minsamples_3/calinski_harabasz 76.43484
+wandb:         dbscan/eps_0.3_minsamples_3/n_clusters 51
+wandb:        dbscan/eps_0.3_minsamples_3/noise_ratio 0.62823
+wandb:         dbscan/eps_0.3_minsamples_3/silhouette 0.17363
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz 154.35797
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters 16
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio 0.80242
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette 0.35716
+wandb:            hdbscan/minsize10hdbscan/silhouette 0.33062
+wandb:             hdbscan/minsize3hdbscan/silhouette 0.3614
+wandb:             hdbscan/minsize5hdbscan/silhouette 0.2366
+wandb:                             hdbscan/n_clusters 4
+wandb:                            hdbscan/noise_ratio 0.57419
+wandb:                       kmeans/calinski_harabasz 402.02261
+wandb:                                 kmeans/inertia 1886.69312
+wandb:                              kmeans/silhouette 0.24663
+wandb: 
+wandb: 🚀 View run zany-sweep-2 at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/bvrac5t2
+wandb: ⭐️ View project at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: Synced 5 W&B file(s), 0 media file(s), 21 artifact file(s) and 4 other file(s)
+wandb: Find logs at: ./wandb/run-20241031_184310-bvrac5t2/logs
+wandb: Agent Starting Run: 1jn29oja with config:
+wandb: 	batch_size: 40
+wandb: 	data_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/dataset
+wandb: 	dbscan_eps_values: [0.1, 0.2, 0.3]
+wandb: 	dbscan_min_samples: [3, 5, 10]
+wandb: 	dropout_conv: 0.23037448546520012
+wandb: 	dropout_fc: 0.42793365261644367
+wandb: 	hdbscan_min_sizes: [3, 5, 10]
+wandb: 	kmeans_k_values: [6, 9, 12]
+wandb: 	latent_dim: 4
+wandb: 	leaky_relu_slope: 0.01
+wandb: 	learning_rate: 0.00692440691884721
+wandb: 	model_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/model_training_SLURM/artifacts/obj/md5/9a/5026db2161df3761cf884fc01cd090
+wandb: 	num_epochs: 100
+wandb: 	num_workers: 4
+wandb: 	optimizer: adam
+wandb: 	scheduler_factor: 0.1
+wandb: 	scheduler_patience: 10
+wandb: 	weight_decay: 6.12680524937952e-06
+wandb: Tracking run with wandb version 0.18.5
+wandb: Run data is saved locally in /home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/wandb/run-20241031_184429-1jn29oja
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run polar-sweep-3
+wandb: ⭐️ View project at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: 🧹 View sweep at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/sweeps/cwzycdl4
+wandb: 🚀 View run at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/1jn29oja
+/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py:32: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path, map_location=device)
+wandb: - 2.735 MB of 3.514 MB uploadedwandb: \ 3.514 MB of 3.514 MB uploadedwandb: | 3.514 MB of 3.514 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette ▁
+wandb:            hdbscan/minsize10hdbscan/silhouette ▁
+wandb:             hdbscan/minsize3hdbscan/silhouette ▁
+wandb:             hdbscan/minsize5hdbscan/silhouette ▁
+wandb:                             hdbscan/n_clusters █▂▁
+wandb:                            hdbscan/noise_ratio ▁██
+wandb:                       kmeans/calinski_harabasz █▃▁
+wandb:                                 kmeans/inertia █▄▁
+wandb:                              kmeans/silhouette █▁▇
+wandb: 
+wandb: Run summary:
+wandb:                         best_dbscan_silhouette 1
+wandb:                        best_hdbscan_silhouette 0.3614
+wandb:                         best_kmeans_silhouette 0.24663
+wandb:                                completion_time 2024-10-31 18:45:39
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette 1
+wandb:  dbscan/eps_0.1_minsamples_3/calinski_harabasz 412999.09375
+wandb:         dbscan/eps_0.1_minsamples_3/n_clusters 3
+wandb:        dbscan/eps_0.1_minsamples_3/noise_ratio 0.96613
+wandb:         dbscan/eps_0.1_minsamples_3/silhouette 0.99798
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz 2037224723972096.0
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters 2
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio 0.96855
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette 1
+wandb:  dbscan/eps_0.2_minsamples_3/calinski_harabasz 856.84363
+wandb:         dbscan/eps_0.2_minsamples_3/n_clusters 24
+wandb:        dbscan/eps_0.2_minsamples_3/noise_ratio 0.8879
+wandb:         dbscan/eps_0.2_minsamples_3/silhouette 0.67753
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz 4574.26465
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters 5
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio 0.95
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette 0.89884
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz 1454.44116
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters 6
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio 0.91532
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette 0.67983
+wandb:  dbscan/eps_0.3_minsamples_3/calinski_harabasz 76.43484
+wandb:         dbscan/eps_0.3_minsamples_3/n_clusters 51
+wandb:        dbscan/eps_0.3_minsamples_3/noise_ratio 0.62823
+wandb:         dbscan/eps_0.3_minsamples_3/silhouette 0.17363
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz 154.35797
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters 16
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio 0.80242
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette 0.35716
+wandb:            hdbscan/minsize10hdbscan/silhouette 0.33062
+wandb:             hdbscan/minsize3hdbscan/silhouette 0.3614
+wandb:             hdbscan/minsize5hdbscan/silhouette 0.2366
+wandb:                             hdbscan/n_clusters 4
+wandb:                            hdbscan/noise_ratio 0.57419
+wandb:                       kmeans/calinski_harabasz 340.54007
+wandb:                                 kmeans/inertia 1224.55737
+wandb:                              kmeans/silhouette 0.24073
+wandb: 
+wandb: 🚀 View run polar-sweep-3 at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/1jn29oja
+wandb: ⭐️ View project at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: Synced 5 W&B file(s), 0 media file(s), 21 artifact file(s) and 4 other file(s)
+wandb: Find logs at: ./wandb/run-20241031_184429-1jn29oja/logs
+wandb: Agent Starting Run: g4rv9y4l with config:
+wandb: 	batch_size: 40
+wandb: 	data_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/dataset
+wandb: 	dbscan_eps_values: [0.1, 0.2, 0.3]
+wandb: 	dbscan_min_samples: [3, 5, 10]
+wandb: 	dropout_conv: 0.23037448546520012
+wandb: 	dropout_fc: 0.42793365261644367
+wandb: 	hdbscan_min_sizes: [5, 10, 15]
+wandb: 	kmeans_k_values: [2, 3, 4]
+wandb: 	latent_dim: 4
+wandb: 	leaky_relu_slope: 0.01
+wandb: 	learning_rate: 0.00692440691884721
+wandb: 	model_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/model_training_SLURM/artifacts/obj/md5/9a/5026db2161df3761cf884fc01cd090
+wandb: 	num_epochs: 100
+wandb: 	num_workers: 4
+wandb: 	optimizer: adam
+wandb: 	scheduler_factor: 0.1
+wandb: 	scheduler_patience: 10
+wandb: 	weight_decay: 6.12680524937952e-06
+wandb: Tracking run with wandb version 0.18.5
+wandb: Run data is saved locally in /home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/wandb/run-20241031_184546-g4rv9y4l
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run elated-sweep-4
+wandb: ⭐️ View project at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: 🧹 View sweep at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/sweeps/cwzycdl4
+wandb: 🚀 View run at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/g4rv9y4l
+/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py:32: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path, map_location=device)
+wandb: - 2.839 MB of 3.458 MB uploadedwandb: \ 3.458 MB of 3.458 MB uploadedwandb: | 3.461 MB of 3.461 MB uploadedwandb: / 3.461 MB of 3.461 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette ▁
+wandb:            hdbscan/minsize10hdbscan/silhouette ▁
+wandb:            hdbscan/minsize15hdbscan/silhouette ▁
+wandb:             hdbscan/minsize5hdbscan/silhouette ▁
+wandb:                             hdbscan/n_clusters █▁▁
+wandb:                            hdbscan/noise_ratio ▁▁█
+wandb:                       kmeans/calinski_harabasz █▄▁
+wandb:                                 kmeans/inertia █▃▁
+wandb:                              kmeans/silhouette █▅▁
+wandb: 
+wandb: Run summary:
+wandb:                         best_dbscan_silhouette 1
+wandb:                        best_hdbscan_silhouette 0.41573
+wandb:                         best_kmeans_silhouette 0.29277
+wandb:                                completion_time 2024-10-31 18:46:55
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette 1
+wandb:  dbscan/eps_0.1_minsamples_3/calinski_harabasz 412999.09375
+wandb:         dbscan/eps_0.1_minsamples_3/n_clusters 3
+wandb:        dbscan/eps_0.1_minsamples_3/noise_ratio 0.96613
+wandb:         dbscan/eps_0.1_minsamples_3/silhouette 0.99798
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz 2037224723972096.0
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters 2
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio 0.96855
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette 1
+wandb:  dbscan/eps_0.2_minsamples_3/calinski_harabasz 856.84363
+wandb:         dbscan/eps_0.2_minsamples_3/n_clusters 24
+wandb:        dbscan/eps_0.2_minsamples_3/noise_ratio 0.8879
+wandb:         dbscan/eps_0.2_minsamples_3/silhouette 0.67753
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz 4574.26465
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters 5
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio 0.95
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette 0.89884
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz 1454.44116
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters 6
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio 0.91532
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette 0.67983
+wandb:  dbscan/eps_0.3_minsamples_3/calinski_harabasz 76.43484
+wandb:         dbscan/eps_0.3_minsamples_3/n_clusters 51
+wandb:        dbscan/eps_0.3_minsamples_3/noise_ratio 0.62823
+wandb:         dbscan/eps_0.3_minsamples_3/silhouette 0.17363
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz 154.35797
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters 16
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio 0.80242
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette 0.35716
+wandb:            hdbscan/minsize10hdbscan/silhouette 0.33062
+wandb:            hdbscan/minsize15hdbscan/silhouette 0.41573
+wandb:             hdbscan/minsize5hdbscan/silhouette 0.2366
+wandb:                             hdbscan/n_clusters 4
+wandb:                            hdbscan/noise_ratio 0.69355
+wandb:                       kmeans/calinski_harabasz 421.32147
+wandb:                                 kmeans/inertia 2452.25781
+wandb:                              kmeans/silhouette 0.23405
+wandb: 
+wandb: 🚀 View run elated-sweep-4 at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/g4rv9y4l
+wandb: ⭐️ View project at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: Synced 5 W&B file(s), 0 media file(s), 23 artifact file(s) and 4 other file(s)
+wandb: Find logs at: ./wandb/run-20241031_184546-g4rv9y4l/logs
+wandb: Agent Starting Run: 9kaoguqy with config:
+wandb: 	batch_size: 40
+wandb: 	data_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/dataset
+wandb: 	dbscan_eps_values: [0.1, 0.2, 0.3]
+wandb: 	dbscan_min_samples: [3, 5, 10]
+wandb: 	dropout_conv: 0.23037448546520012
+wandb: 	dropout_fc: 0.42793365261644367
+wandb: 	hdbscan_min_sizes: [5, 10, 15]
+wandb: 	kmeans_k_values: [4, 5, 6]
+wandb: 	latent_dim: 4
+wandb: 	leaky_relu_slope: 0.01
+wandb: 	learning_rate: 0.00692440691884721
+wandb: 	model_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/model_training_SLURM/artifacts/obj/md5/9a/5026db2161df3761cf884fc01cd090
+wandb: 	num_epochs: 100
+wandb: 	num_workers: 4
+wandb: 	optimizer: adam
+wandb: 	scheduler_factor: 0.1
+wandb: 	scheduler_patience: 10
+wandb: 	weight_decay: 6.12680524937952e-06
+wandb: Tracking run with wandb version 0.18.5
+wandb: Run data is saved locally in /home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/wandb/run-20241031_184704-9kaoguqy
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run warm-sweep-5
+wandb: ⭐️ View project at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: 🧹 View sweep at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/sweeps/cwzycdl4
+wandb: 🚀 View run at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/9kaoguqy
+/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py:32: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path, map_location=device)
+wandb: - 2.732 MB of 3.476 MB uploadedwandb: \ 3.476 MB of 3.476 MB uploadedwandb: | 3.476 MB of 3.476 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette ▁
+wandb:            hdbscan/minsize10hdbscan/silhouette ▁
+wandb:            hdbscan/minsize15hdbscan/silhouette ▁
+wandb:             hdbscan/minsize5hdbscan/silhouette ▁
+wandb:                             hdbscan/n_clusters █▁▁
+wandb:                            hdbscan/noise_ratio ▁▁█
+wandb:                       kmeans/calinski_harabasz █▁▅
+wandb:                                 kmeans/inertia █▅▁
+wandb:                              kmeans/silhouette ▂▁█
+wandb: 
+wandb: Run summary:
+wandb:                         best_dbscan_silhouette 1
+wandb:                        best_hdbscan_silhouette 0.41573
+wandb:                         best_kmeans_silhouette 0.24663
+wandb:                                completion_time 2024-10-31 18:48:12
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette 1
+wandb:  dbscan/eps_0.1_minsamples_3/calinski_harabasz 412999.09375
+wandb:         dbscan/eps_0.1_minsamples_3/n_clusters 3
+wandb:        dbscan/eps_0.1_minsamples_3/noise_ratio 0.96613
+wandb:         dbscan/eps_0.1_minsamples_3/silhouette 0.99798
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz 2037224723972096.0
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters 2
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio 0.96855
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette 1
+wandb:  dbscan/eps_0.2_minsamples_3/calinski_harabasz 856.84363
+wandb:         dbscan/eps_0.2_minsamples_3/n_clusters 24
+wandb:        dbscan/eps_0.2_minsamples_3/noise_ratio 0.8879
+wandb:         dbscan/eps_0.2_minsamples_3/silhouette 0.67753
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz 4574.26465
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters 5
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio 0.95
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette 0.89884
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz 1454.44116
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters 6
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio 0.91532
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette 0.67983
+wandb:  dbscan/eps_0.3_minsamples_3/calinski_harabasz 76.43484
+wandb:         dbscan/eps_0.3_minsamples_3/n_clusters 51
+wandb:        dbscan/eps_0.3_minsamples_3/noise_ratio 0.62823
+wandb:         dbscan/eps_0.3_minsamples_3/silhouette 0.17363
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz 154.35797
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters 16
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio 0.80242
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette 0.35716
+wandb:            hdbscan/minsize10hdbscan/silhouette 0.33062
+wandb:            hdbscan/minsize15hdbscan/silhouette 0.41573
+wandb:             hdbscan/minsize5hdbscan/silhouette 0.2366
+wandb:                             hdbscan/n_clusters 4
+wandb:                            hdbscan/noise_ratio 0.69355
+wandb:                       kmeans/calinski_harabasz 402.02261
+wandb:                                 kmeans/inertia 1886.69312
+wandb:                              kmeans/silhouette 0.24663
+wandb: 
+wandb: 🚀 View run warm-sweep-5 at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/9kaoguqy
+wandb: ⭐️ View project at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: Synced 5 W&B file(s), 0 media file(s), 21 artifact file(s) and 4 other file(s)
+wandb: Find logs at: ./wandb/run-20241031_184704-9kaoguqy/logs
+wandb: Agent Starting Run: pug64v56 with config:
+wandb: 	batch_size: 40
+wandb: 	data_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/dataset
+wandb: 	dbscan_eps_values: [0.1, 0.2, 0.3]
+wandb: 	dbscan_min_samples: [3, 5, 10]
+wandb: 	dropout_conv: 0.23037448546520012
+wandb: 	dropout_fc: 0.42793365261644367
+wandb: 	hdbscan_min_sizes: [5, 10, 15]
+wandb: 	kmeans_k_values: [6, 9, 12]
+wandb: 	latent_dim: 4
+wandb: 	leaky_relu_slope: 0.01
+wandb: 	learning_rate: 0.00692440691884721
+wandb: 	model_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/model_training_SLURM/artifacts/obj/md5/9a/5026db2161df3761cf884fc01cd090
+wandb: 	num_epochs: 100
+wandb: 	num_workers: 4
+wandb: 	optimizer: adam
+wandb: 	scheduler_factor: 0.1
+wandb: 	scheduler_patience: 10
+wandb: 	weight_decay: 6.12680524937952e-06
+wandb: Tracking run with wandb version 0.18.5
+wandb: Run data is saved locally in /home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/wandb/run-20241031_184817-pug64v56
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run young-sweep-6
+wandb: ⭐️ View project at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: 🧹 View sweep at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/sweeps/cwzycdl4
+wandb: 🚀 View run at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/pug64v56
+/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py:32: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path, map_location=device)
+wandb: - 3.497 MB of 3.497 MB uploadedwandb: \ 3.497 MB of 3.497 MB uploadedwandb: | 3.497 MB of 3.497 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette ▁
+wandb:            hdbscan/minsize10hdbscan/silhouette ▁
+wandb:            hdbscan/minsize15hdbscan/silhouette ▁
+wandb:             hdbscan/minsize5hdbscan/silhouette ▁
+wandb:                             hdbscan/n_clusters █▁▁
+wandb:                            hdbscan/noise_ratio ▁▁█
+wandb:                       kmeans/calinski_harabasz █▃▁
+wandb:                                 kmeans/inertia █▄▁
+wandb:                              kmeans/silhouette █▁▇
+wandb: 
+wandb: Run summary:
+wandb:                         best_dbscan_silhouette 1
+wandb:                        best_hdbscan_silhouette 0.41573
+wandb:                         best_kmeans_silhouette 0.24663
+wandb:                                completion_time 2024-10-31 18:49:25
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette 1
+wandb:  dbscan/eps_0.1_minsamples_3/calinski_harabasz 412999.09375
+wandb:         dbscan/eps_0.1_minsamples_3/n_clusters 3
+wandb:        dbscan/eps_0.1_minsamples_3/noise_ratio 0.96613
+wandb:         dbscan/eps_0.1_minsamples_3/silhouette 0.99798
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz 2037224723972096.0
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters 2
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio 0.96855
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette 1
+wandb:  dbscan/eps_0.2_minsamples_3/calinski_harabasz 856.84363
+wandb:         dbscan/eps_0.2_minsamples_3/n_clusters 24
+wandb:        dbscan/eps_0.2_minsamples_3/noise_ratio 0.8879
+wandb:         dbscan/eps_0.2_minsamples_3/silhouette 0.67753
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz 4574.26465
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters 5
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio 0.95
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette 0.89884
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz 1454.44116
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters 6
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio 0.91532
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette 0.67983
+wandb:  dbscan/eps_0.3_minsamples_3/calinski_harabasz 76.43484
+wandb:         dbscan/eps_0.3_minsamples_3/n_clusters 51
+wandb:        dbscan/eps_0.3_minsamples_3/noise_ratio 0.62823
+wandb:         dbscan/eps_0.3_minsamples_3/silhouette 0.17363
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz 154.35797
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters 16
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio 0.80242
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette 0.35716
+wandb:            hdbscan/minsize10hdbscan/silhouette 0.33062
+wandb:            hdbscan/minsize15hdbscan/silhouette 0.41573
+wandb:             hdbscan/minsize5hdbscan/silhouette 0.2366
+wandb:                             hdbscan/n_clusters 4
+wandb:                            hdbscan/noise_ratio 0.69355
+wandb:                       kmeans/calinski_harabasz 340.54007
+wandb:                                 kmeans/inertia 1224.55737
+wandb:                              kmeans/silhouette 0.24073
+wandb: 
+wandb: 🚀 View run young-sweep-6 at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/pug64v56
+wandb: ⭐️ View project at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: Synced 5 W&B file(s), 0 media file(s), 21 artifact file(s) and 4 other file(s)
+wandb: Find logs at: ./wandb/run-20241031_184817-pug64v56/logs
+wandb: Sweep Agent: Waiting for job.
+wandb: Job received.
+wandb: Agent Starting Run: uphf05p5 with config:
+wandb: 	batch_size: 40
+wandb: 	data_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/dataset
+wandb: 	dbscan_eps_values: [0.1, 0.2, 0.3]
+wandb: 	dbscan_min_samples: [3, 5, 10]
+wandb: 	dropout_conv: 0.23037448546520012
+wandb: 	dropout_fc: 0.42793365261644367
+wandb: 	hdbscan_min_sizes: [10, 15, 20]
+wandb: 	kmeans_k_values: [2, 3, 4]
+wandb: 	latent_dim: 4
+wandb: 	leaky_relu_slope: 0.01
+wandb: 	learning_rate: 0.00692440691884721
+wandb: 	model_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/model_training_SLURM/artifacts/obj/md5/9a/5026db2161df3761cf884fc01cd090
+wandb: 	num_epochs: 100
+wandb: 	num_workers: 4
+wandb: 	optimizer: adam
+wandb: 	scheduler_factor: 0.1
+wandb: 	scheduler_patience: 10
+wandb: 	weight_decay: 6.12680524937952e-06
+wandb: Tracking run with wandb version 0.18.5
+wandb: Run data is saved locally in /home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/wandb/run-20241031_184939-uphf05p5
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run absurd-sweep-7
+wandb: ⭐️ View project at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: 🧹 View sweep at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/sweeps/cwzycdl4
+wandb: 🚀 View run at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/uphf05p5
+/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py:32: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path, map_location=device)
+wandb: - 3.447 MB of 3.447 MB uploadedwandb: \ 3.449 MB of 3.449 MB uploadedwandb: | 3.454 MB of 3.454 MB uploadedwandb: / 3.454 MB of 3.454 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette ▁
+wandb:            hdbscan/minsize10hdbscan/silhouette ▁
+wandb:            hdbscan/minsize15hdbscan/silhouette ▁
+wandb:            hdbscan/minsize20hdbscan/silhouette ▁
+wandb:                             hdbscan/n_clusters ██▁
+wandb:                            hdbscan/noise_ratio ▁██
+wandb:                       kmeans/calinski_harabasz █▄▁
+wandb:                                 kmeans/inertia █▃▁
+wandb:                              kmeans/silhouette █▅▁
+wandb: 
+wandb: Run summary:
+wandb:                         best_dbscan_silhouette 1
+wandb:                        best_hdbscan_silhouette 0.41573
+wandb:                         best_kmeans_silhouette 0.29277
+wandb:                                completion_time 2024-10-31 18:50:49
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette 1
+wandb:  dbscan/eps_0.1_minsamples_3/calinski_harabasz 412999.09375
+wandb:         dbscan/eps_0.1_minsamples_3/n_clusters 3
+wandb:        dbscan/eps_0.1_minsamples_3/noise_ratio 0.96613
+wandb:         dbscan/eps_0.1_minsamples_3/silhouette 0.99798
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz 2037224723972096.0
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters 2
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio 0.96855
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette 1
+wandb:  dbscan/eps_0.2_minsamples_3/calinski_harabasz 856.84363
+wandb:         dbscan/eps_0.2_minsamples_3/n_clusters 24
+wandb:        dbscan/eps_0.2_minsamples_3/noise_ratio 0.8879
+wandb:         dbscan/eps_0.2_minsamples_3/silhouette 0.67753
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz 4574.26465
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters 5
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio 0.95
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette 0.89884
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz 1454.44116
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters 6
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio 0.91532
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette 0.67983
+wandb:  dbscan/eps_0.3_minsamples_3/calinski_harabasz 76.43484
+wandb:         dbscan/eps_0.3_minsamples_3/n_clusters 51
+wandb:        dbscan/eps_0.3_minsamples_3/noise_ratio 0.62823
+wandb:         dbscan/eps_0.3_minsamples_3/silhouette 0.17363
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz 154.35797
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters 16
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio 0.80242
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette 0.35716
+wandb:            hdbscan/minsize10hdbscan/silhouette 0.33062
+wandb:            hdbscan/minsize15hdbscan/silhouette 0.41573
+wandb:            hdbscan/minsize20hdbscan/silhouette 0.38884
+wandb:                             hdbscan/n_clusters 3
+wandb:                            hdbscan/noise_ratio 0.69758
+wandb:                       kmeans/calinski_harabasz 421.32147
+wandb:                                 kmeans/inertia 2452.25781
+wandb:                              kmeans/silhouette 0.23405
+wandb: 
+wandb: 🚀 View run absurd-sweep-7 at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/uphf05p5
+wandb: ⭐️ View project at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: Synced 5 W&B file(s), 0 media file(s), 23 artifact file(s) and 4 other file(s)
+wandb: Find logs at: ./wandb/run-20241031_184939-uphf05p5/logs
+wandb: Agent Starting Run: obepu8l9 with config:
+wandb: 	batch_size: 40
+wandb: 	data_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/dataset
+wandb: 	dbscan_eps_values: [0.1, 0.2, 0.3]
+wandb: 	dbscan_min_samples: [3, 5, 10]
+wandb: 	dropout_conv: 0.23037448546520012
+wandb: 	dropout_fc: 0.42793365261644367
+wandb: 	hdbscan_min_sizes: [10, 15, 20]
+wandb: 	kmeans_k_values: [4, 5, 6]
+wandb: 	latent_dim: 4
+wandb: 	leaky_relu_slope: 0.01
+wandb: 	learning_rate: 0.00692440691884721
+wandb: 	model_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/model_training_SLURM/artifacts/obj/md5/9a/5026db2161df3761cf884fc01cd090
+wandb: 	num_epochs: 100
+wandb: 	num_workers: 4
+wandb: 	optimizer: adam
+wandb: 	scheduler_factor: 0.1
+wandb: 	scheduler_patience: 10
+wandb: 	weight_decay: 6.12680524937952e-06
+wandb: Tracking run with wandb version 0.18.5
+wandb: Run data is saved locally in /home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/wandb/run-20241031_185057-obepu8l9
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run zesty-sweep-8
+wandb: ⭐️ View project at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: 🧹 View sweep at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/sweeps/cwzycdl4
+wandb: 🚀 View run at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/obepu8l9
+/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py:32: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path, map_location=device)
+wandb: - 2.811 MB of 3.465 MB uploadedwandb: \ 3.465 MB of 3.465 MB uploadedwandb: | 3.465 MB of 3.465 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette ▁
+wandb:            hdbscan/minsize10hdbscan/silhouette ▁
+wandb:            hdbscan/minsize15hdbscan/silhouette ▁
+wandb:            hdbscan/minsize20hdbscan/silhouette ▁
+wandb:                             hdbscan/n_clusters ██▁
+wandb:                            hdbscan/noise_ratio ▁██
+wandb:                       kmeans/calinski_harabasz █▁▅
+wandb:                                 kmeans/inertia █▅▁
+wandb:                              kmeans/silhouette ▂▁█
+wandb: 
+wandb: Run summary:
+wandb:                         best_dbscan_silhouette 1
+wandb:                        best_hdbscan_silhouette 0.41573
+wandb:                         best_kmeans_silhouette 0.24663
+wandb:                                completion_time 2024-10-31 18:52:06
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette 1
+wandb:  dbscan/eps_0.1_minsamples_3/calinski_harabasz 412999.09375
+wandb:         dbscan/eps_0.1_minsamples_3/n_clusters 3
+wandb:        dbscan/eps_0.1_minsamples_3/noise_ratio 0.96613
+wandb:         dbscan/eps_0.1_minsamples_3/silhouette 0.99798
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz 2037224723972096.0
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters 2
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio 0.96855
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette 1
+wandb:  dbscan/eps_0.2_minsamples_3/calinski_harabasz 856.84363
+wandb:         dbscan/eps_0.2_minsamples_3/n_clusters 24
+wandb:        dbscan/eps_0.2_minsamples_3/noise_ratio 0.8879
+wandb:         dbscan/eps_0.2_minsamples_3/silhouette 0.67753
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz 4574.26465
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters 5
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio 0.95
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette 0.89884
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz 1454.44116
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters 6
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio 0.91532
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette 0.67983
+wandb:  dbscan/eps_0.3_minsamples_3/calinski_harabasz 76.43484
+wandb:         dbscan/eps_0.3_minsamples_3/n_clusters 51
+wandb:        dbscan/eps_0.3_minsamples_3/noise_ratio 0.62823
+wandb:         dbscan/eps_0.3_minsamples_3/silhouette 0.17363
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz 154.35797
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters 16
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio 0.80242
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette 0.35716
+wandb:            hdbscan/minsize10hdbscan/silhouette 0.33062
+wandb:            hdbscan/minsize15hdbscan/silhouette 0.41573
+wandb:            hdbscan/minsize20hdbscan/silhouette 0.38884
+wandb:                             hdbscan/n_clusters 3
+wandb:                            hdbscan/noise_ratio 0.69758
+wandb:                       kmeans/calinski_harabasz 402.02261
+wandb:                                 kmeans/inertia 1886.69312
+wandb:                              kmeans/silhouette 0.24663
+wandb: 
+wandb: 🚀 View run zesty-sweep-8 at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/obepu8l9
+wandb: ⭐️ View project at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: Synced 5 W&B file(s), 0 media file(s), 21 artifact file(s) and 4 other file(s)
+wandb: Find logs at: ./wandb/run-20241031_185057-obepu8l9/logs
+wandb: Agent Starting Run: 35ddnost with config:
+wandb: 	batch_size: 40
+wandb: 	data_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/dataset
+wandb: 	dbscan_eps_values: [0.1, 0.2, 0.3]
+wandb: 	dbscan_min_samples: [3, 5, 10]
+wandb: 	dropout_conv: 0.23037448546520012
+wandb: 	dropout_fc: 0.42793365261644367
+wandb: 	hdbscan_min_sizes: [10, 15, 20]
+wandb: 	kmeans_k_values: [6, 9, 12]
+wandb: 	latent_dim: 4
+wandb: 	leaky_relu_slope: 0.01
+wandb: 	learning_rate: 0.00692440691884721
+wandb: 	model_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/model_training_SLURM/artifacts/obj/md5/9a/5026db2161df3761cf884fc01cd090
+wandb: 	num_epochs: 100
+wandb: 	num_workers: 4
+wandb: 	optimizer: adam
+wandb: 	scheduler_factor: 0.1
+wandb: 	scheduler_patience: 10
+wandb: 	weight_decay: 6.12680524937952e-06
+wandb: Tracking run with wandb version 0.18.5
+wandb: Run data is saved locally in /home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/wandb/run-20241031_185215-35ddnost
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run dandy-sweep-9
+wandb: ⭐️ View project at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: 🧹 View sweep at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/sweeps/cwzycdl4
+wandb: 🚀 View run at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/35ddnost
+/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py:32: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path, map_location=device)
+wandb: - 2.974 MB of 3.486 MB uploadedwandb: \ 3.486 MB of 3.486 MB uploadedwandb: | 3.486 MB of 3.486 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_3/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_3/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_3/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_3/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette ▁
+wandb:            hdbscan/minsize10hdbscan/silhouette ▁
+wandb:            hdbscan/minsize15hdbscan/silhouette ▁
+wandb:            hdbscan/minsize20hdbscan/silhouette ▁
+wandb:                             hdbscan/n_clusters ██▁
+wandb:                            hdbscan/noise_ratio ▁██
+wandb:                       kmeans/calinski_harabasz █▃▁
+wandb:                                 kmeans/inertia █▄▁
+wandb:                              kmeans/silhouette █▁▇
+wandb: 
+wandb: Run summary:
+wandb:                         best_dbscan_silhouette 1
+wandb:                        best_hdbscan_silhouette 0.41573
+wandb:                         best_kmeans_silhouette 0.24663
+wandb:                                completion_time 2024-10-31 18:53:23
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette 1
+wandb:  dbscan/eps_0.1_minsamples_3/calinski_harabasz 412999.09375
+wandb:         dbscan/eps_0.1_minsamples_3/n_clusters 3
+wandb:        dbscan/eps_0.1_minsamples_3/noise_ratio 0.96613
+wandb:         dbscan/eps_0.1_minsamples_3/silhouette 0.99798
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz 2037224723972096.0
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters 2
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio 0.96855
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette 1
+wandb:  dbscan/eps_0.2_minsamples_3/calinski_harabasz 856.84363
+wandb:         dbscan/eps_0.2_minsamples_3/n_clusters 24
+wandb:        dbscan/eps_0.2_minsamples_3/noise_ratio 0.8879
+wandb:         dbscan/eps_0.2_minsamples_3/silhouette 0.67753
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz 4574.26465
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters 5
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio 0.95
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette 0.89884
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz 1454.44116
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters 6
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio 0.91532
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette 0.67983
+wandb:  dbscan/eps_0.3_minsamples_3/calinski_harabasz 76.43484
+wandb:         dbscan/eps_0.3_minsamples_3/n_clusters 51
+wandb:        dbscan/eps_0.3_minsamples_3/noise_ratio 0.62823
+wandb:         dbscan/eps_0.3_minsamples_3/silhouette 0.17363
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz 154.35797
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters 16
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio 0.80242
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette 0.35716
+wandb:            hdbscan/minsize10hdbscan/silhouette 0.33062
+wandb:            hdbscan/minsize15hdbscan/silhouette 0.41573
+wandb:            hdbscan/minsize20hdbscan/silhouette 0.38884
+wandb:                             hdbscan/n_clusters 3
+wandb:                            hdbscan/noise_ratio 0.69758
+wandb:                       kmeans/calinski_harabasz 340.54007
+wandb:                                 kmeans/inertia 1224.55737
+wandb:                              kmeans/silhouette 0.24073
+wandb: 
+wandb: 🚀 View run dandy-sweep-9 at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/35ddnost
+wandb: ⭐️ View project at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: Synced 5 W&B file(s), 0 media file(s), 21 artifact file(s) and 4 other file(s)
+wandb: Find logs at: ./wandb/run-20241031_185215-35ddnost/logs
+wandb: Agent Starting Run: 71q1hqpx with config:
+wandb: 	batch_size: 40
+wandb: 	data_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/dataset
+wandb: 	dbscan_eps_values: [0.1, 0.2, 0.3]
+wandb: 	dbscan_min_samples: [5, 10, 15]
+wandb: 	dropout_conv: 0.23037448546520012
+wandb: 	dropout_fc: 0.42793365261644367
+wandb: 	hdbscan_min_sizes: [3, 5, 10]
+wandb: 	kmeans_k_values: [2, 3, 4]
+wandb: 	latent_dim: 4
+wandb: 	leaky_relu_slope: 0.01
+wandb: 	learning_rate: 0.00692440691884721
+wandb: 	model_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/model_training_SLURM/artifacts/obj/md5/9a/5026db2161df3761cf884fc01cd090
+wandb: 	num_epochs: 100
+wandb: 	num_workers: 4
+wandb: 	optimizer: adam
+wandb: 	scheduler_factor: 0.1
+wandb: 	scheduler_patience: 10
+wandb: 	weight_decay: 6.12680524937952e-06
+wandb: Tracking run with wandb version 0.18.5
+wandb: Run data is saved locally in /home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/wandb/run-20241031_185332-71q1hqpx
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run golden-sweep-10
+wandb: ⭐️ View project at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: 🧹 View sweep at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/sweeps/cwzycdl4
+wandb: 🚀 View run at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/71q1hqpx
+/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py:32: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path, map_location=device)
+wandb: - 2.851 MB of 3.450 MB uploadedwandb: \ 3.450 MB of 3.450 MB uploadedwandb: | 3.452 MB of 3.452 MB uploadedwandb: / 3.452 MB of 3.452 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.1_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette ▁
+wandb:            hdbscan/minsize10hdbscan/silhouette ▁
+wandb:             hdbscan/minsize3hdbscan/silhouette ▁
+wandb:             hdbscan/minsize5hdbscan/silhouette ▁
+wandb:                             hdbscan/n_clusters █▂▁
+wandb:                            hdbscan/noise_ratio ▁██
+wandb:                       kmeans/calinski_harabasz █▄▁
+wandb:                                 kmeans/inertia █▃▁
+wandb:                              kmeans/silhouette █▅▁
+wandb: 
+wandb: Run summary:
+wandb:                         best_dbscan_silhouette 1
+wandb:                        best_hdbscan_silhouette 0.3614
+wandb:                         best_kmeans_silhouette 0.29277
+wandb:                                completion_time 2024-10-31 18:54:38
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette 1
+wandb: dbscan/eps_0.1_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz 2037224723972096.0
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters 2
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio 0.96855
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz 4574.26465
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters 5
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio 0.95
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette 0.89884
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz 1454.44116
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters 6
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio 0.91532
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette 0.67983
+wandb: dbscan/eps_0.3_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.3_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.3_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.3_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz 154.35797
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters 16
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio 0.80242
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette 0.35716
+wandb:            hdbscan/minsize10hdbscan/silhouette 0.33062
+wandb:             hdbscan/minsize3hdbscan/silhouette 0.3614
+wandb:             hdbscan/minsize5hdbscan/silhouette 0.2366
+wandb:                             hdbscan/n_clusters 4
+wandb:                            hdbscan/noise_ratio 0.57419
+wandb:                       kmeans/calinski_harabasz 421.32147
+wandb:                                 kmeans/inertia 2452.25781
+wandb:                              kmeans/silhouette 0.23405
+wandb: 
+wandb: 🚀 View run golden-sweep-10 at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/71q1hqpx
+wandb: ⭐️ View project at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: Synced 5 W&B file(s), 0 media file(s), 23 artifact file(s) and 4 other file(s)
+wandb: Find logs at: ./wandb/run-20241031_185332-71q1hqpx/logs
+wandb: Agent Starting Run: 9qc39yog with config:
+wandb: 	batch_size: 40
+wandb: 	data_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/dataset
+wandb: 	dbscan_eps_values: [0.1, 0.2, 0.3]
+wandb: 	dbscan_min_samples: [5, 10, 15]
+wandb: 	dropout_conv: 0.23037448546520012
+wandb: 	dropout_fc: 0.42793365261644367
+wandb: 	hdbscan_min_sizes: [3, 5, 10]
+wandb: 	kmeans_k_values: [4, 5, 6]
+wandb: 	latent_dim: 4
+wandb: 	leaky_relu_slope: 0.01
+wandb: 	learning_rate: 0.00692440691884721
+wandb: 	model_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/model_training_SLURM/artifacts/obj/md5/9a/5026db2161df3761cf884fc01cd090
+wandb: 	num_epochs: 100
+wandb: 	num_workers: 4
+wandb: 	optimizer: adam
+wandb: 	scheduler_factor: 0.1
+wandb: 	scheduler_patience: 10
+wandb: 	weight_decay: 6.12680524937952e-06
+wandb: Tracking run with wandb version 0.18.5
+wandb: Run data is saved locally in /home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/wandb/run-20241031_185449-9qc39yog
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run true-sweep-11
+wandb: ⭐️ View project at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: 🧹 View sweep at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/sweeps/cwzycdl4
+wandb: 🚀 View run at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/9qc39yog
+/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py:32: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path, map_location=device)
+wandb: - 2.832 MB of 3.467 MB uploadedwandb: \ 3.467 MB of 3.467 MB uploadedwandb: | 3.467 MB of 3.467 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.1_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette ▁
+wandb:            hdbscan/minsize10hdbscan/silhouette ▁
+wandb:             hdbscan/minsize3hdbscan/silhouette ▁
+wandb:             hdbscan/minsize5hdbscan/silhouette ▁
+wandb:                             hdbscan/n_clusters █▂▁
+wandb:                            hdbscan/noise_ratio ▁██
+wandb:                       kmeans/calinski_harabasz █▁▅
+wandb:                                 kmeans/inertia █▅▁
+wandb:                              kmeans/silhouette ▂▁█
+wandb: 
+wandb: Run summary:
+wandb:                         best_dbscan_silhouette 1
+wandb:                        best_hdbscan_silhouette 0.3614
+wandb:                         best_kmeans_silhouette 0.24663
+wandb:                                completion_time 2024-10-31 18:55:55
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette 1
+wandb: dbscan/eps_0.1_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz 2037224723972096.0
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters 2
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio 0.96855
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz 4574.26465
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters 5
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio 0.95
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette 0.89884
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz 1454.44116
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters 6
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio 0.91532
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette 0.67983
+wandb: dbscan/eps_0.3_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.3_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.3_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.3_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz 154.35797
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters 16
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio 0.80242
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette 0.35716
+wandb:            hdbscan/minsize10hdbscan/silhouette 0.33062
+wandb:             hdbscan/minsize3hdbscan/silhouette 0.3614
+wandb:             hdbscan/minsize5hdbscan/silhouette 0.2366
+wandb:                             hdbscan/n_clusters 4
+wandb:                            hdbscan/noise_ratio 0.57419
+wandb:                       kmeans/calinski_harabasz 402.02261
+wandb:                                 kmeans/inertia 1886.69312
+wandb:                              kmeans/silhouette 0.24663
+wandb: 
+wandb: 🚀 View run true-sweep-11 at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/9qc39yog
+wandb: ⭐️ View project at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: Synced 5 W&B file(s), 0 media file(s), 21 artifact file(s) and 4 other file(s)
+wandb: Find logs at: ./wandb/run-20241031_185449-9qc39yog/logs
+wandb: Agent Starting Run: 4b1hztqo with config:
+wandb: 	batch_size: 40
+wandb: 	data_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/dataset
+wandb: 	dbscan_eps_values: [0.1, 0.2, 0.3]
+wandb: 	dbscan_min_samples: [5, 10, 15]
+wandb: 	dropout_conv: 0.23037448546520012
+wandb: 	dropout_fc: 0.42793365261644367
+wandb: 	hdbscan_min_sizes: [3, 5, 10]
+wandb: 	kmeans_k_values: [6, 9, 12]
+wandb: 	latent_dim: 4
+wandb: 	leaky_relu_slope: 0.01
+wandb: 	learning_rate: 0.00692440691884721
+wandb: 	model_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/model_training_SLURM/artifacts/obj/md5/9a/5026db2161df3761cf884fc01cd090
+wandb: 	num_epochs: 100
+wandb: 	num_workers: 4
+wandb: 	optimizer: adam
+wandb: 	scheduler_factor: 0.1
+wandb: 	scheduler_patience: 10
+wandb: 	weight_decay: 6.12680524937952e-06
+wandb: Tracking run with wandb version 0.18.5
+wandb: Run data is saved locally in /home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/wandb/run-20241031_185602-4b1hztqo
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run pious-sweep-12
+wandb: ⭐️ View project at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: 🧹 View sweep at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/sweeps/cwzycdl4
+wandb: 🚀 View run at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/4b1hztqo
+/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py:32: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path, map_location=device)
+wandb: - 2.791 MB of 3.489 MB uploadedwandb: \ 3.489 MB of 3.489 MB uploadedwandb: | 3.489 MB of 3.489 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.1_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette ▁
+wandb:            hdbscan/minsize10hdbscan/silhouette ▁
+wandb:             hdbscan/minsize3hdbscan/silhouette ▁
+wandb:             hdbscan/minsize5hdbscan/silhouette ▁
+wandb:                             hdbscan/n_clusters █▂▁
+wandb:                            hdbscan/noise_ratio ▁██
+wandb:                       kmeans/calinski_harabasz █▃▁
+wandb:                                 kmeans/inertia █▄▁
+wandb:                              kmeans/silhouette █▁▇
+wandb: 
+wandb: Run summary:
+wandb:                         best_dbscan_silhouette 1
+wandb:                        best_hdbscan_silhouette 0.3614
+wandb:                         best_kmeans_silhouette 0.24663
+wandb:                                completion_time 2024-10-31 18:57:13
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette 1
+wandb: dbscan/eps_0.1_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz 2037224723972096.0
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters 2
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio 0.96855
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz 4574.26465
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters 5
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio 0.95
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette 0.89884
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz 1454.44116
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters 6
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio 0.91532
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette 0.67983
+wandb: dbscan/eps_0.3_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.3_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.3_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.3_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz 154.35797
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters 16
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio 0.80242
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette 0.35716
+wandb:            hdbscan/minsize10hdbscan/silhouette 0.33062
+wandb:             hdbscan/minsize3hdbscan/silhouette 0.3614
+wandb:             hdbscan/minsize5hdbscan/silhouette 0.2366
+wandb:                             hdbscan/n_clusters 4
+wandb:                            hdbscan/noise_ratio 0.57419
+wandb:                       kmeans/calinski_harabasz 340.54007
+wandb:                                 kmeans/inertia 1224.55737
+wandb:                              kmeans/silhouette 0.24073
+wandb: 
+wandb: 🚀 View run pious-sweep-12 at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/4b1hztqo
+wandb: ⭐️ View project at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: Synced 5 W&B file(s), 0 media file(s), 21 artifact file(s) and 4 other file(s)
+wandb: Find logs at: ./wandb/run-20241031_185602-4b1hztqo/logs
+wandb: Agent Starting Run: a8j7koxw with config:
+wandb: 	batch_size: 40
+wandb: 	data_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/dataset
+wandb: 	dbscan_eps_values: [0.1, 0.2, 0.3]
+wandb: 	dbscan_min_samples: [5, 10, 15]
+wandb: 	dropout_conv: 0.23037448546520012
+wandb: 	dropout_fc: 0.42793365261644367
+wandb: 	hdbscan_min_sizes: [5, 10, 15]
+wandb: 	kmeans_k_values: [2, 3, 4]
+wandb: 	latent_dim: 4
+wandb: 	leaky_relu_slope: 0.01
+wandb: 	learning_rate: 0.00692440691884721
+wandb: 	model_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/model_training_SLURM/artifacts/obj/md5/9a/5026db2161df3761cf884fc01cd090
+wandb: 	num_epochs: 100
+wandb: 	num_workers: 4
+wandb: 	optimizer: adam
+wandb: 	scheduler_factor: 0.1
+wandb: 	scheduler_patience: 10
+wandb: 	weight_decay: 6.12680524937952e-06
+wandb: Tracking run with wandb version 0.18.5
+wandb: Run data is saved locally in /home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/wandb/run-20241031_185720-a8j7koxw
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run rare-sweep-13
+wandb: ⭐️ View project at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: 🧹 View sweep at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/sweeps/cwzycdl4
+wandb: 🚀 View run at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/a8j7koxw
+/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py:32: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path, map_location=device)
+wandb: - 2.807 MB of 3.433 MB uploadedwandb: \ 3.433 MB of 3.433 MB uploadedwandb: | 3.435 MB of 3.435 MB uploadedwandb: / 3.440 MB of 3.440 MB uploadedwandb: - 3.440 MB of 3.440 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.1_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette ▁
+wandb:            hdbscan/minsize10hdbscan/silhouette ▁
+wandb:            hdbscan/minsize15hdbscan/silhouette ▁
+wandb:             hdbscan/minsize5hdbscan/silhouette ▁
+wandb:                             hdbscan/n_clusters █▁▁
+wandb:                            hdbscan/noise_ratio ▁▁█
+wandb:                       kmeans/calinski_harabasz █▄▁
+wandb:                                 kmeans/inertia █▃▁
+wandb:                              kmeans/silhouette █▅▁
+wandb: 
+wandb: Run summary:
+wandb:                         best_dbscan_silhouette 1
+wandb:                        best_hdbscan_silhouette 0.41573
+wandb:                         best_kmeans_silhouette 0.29277
+wandb:                                completion_time 2024-10-31 18:58:26
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette 1
+wandb: dbscan/eps_0.1_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz 2037224723972096.0
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters 2
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio 0.96855
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz 4574.26465
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters 5
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio 0.95
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette 0.89884
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz 1454.44116
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters 6
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio 0.91532
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette 0.67983
+wandb: dbscan/eps_0.3_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.3_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.3_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.3_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz 154.35797
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters 16
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio 0.80242
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette 0.35716
+wandb:            hdbscan/minsize10hdbscan/silhouette 0.33062
+wandb:            hdbscan/minsize15hdbscan/silhouette 0.41573
+wandb:             hdbscan/minsize5hdbscan/silhouette 0.2366
+wandb:                             hdbscan/n_clusters 4
+wandb:                            hdbscan/noise_ratio 0.69355
+wandb:                       kmeans/calinski_harabasz 421.32147
+wandb:                                 kmeans/inertia 2452.25781
+wandb:                              kmeans/silhouette 0.23405
+wandb: 
+wandb: 🚀 View run rare-sweep-13 at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/a8j7koxw
+wandb: ⭐️ View project at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: Synced 5 W&B file(s), 0 media file(s), 23 artifact file(s) and 4 other file(s)
+wandb: Find logs at: ./wandb/run-20241031_185720-a8j7koxw/logs
+wandb: Agent Starting Run: amu90bh3 with config:
+wandb: 	batch_size: 40
+wandb: 	data_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/dataset
+wandb: 	dbscan_eps_values: [0.1, 0.2, 0.3]
+wandb: 	dbscan_min_samples: [5, 10, 15]
+wandb: 	dropout_conv: 0.23037448546520012
+wandb: 	dropout_fc: 0.42793365261644367
+wandb: 	hdbscan_min_sizes: [5, 10, 15]
+wandb: 	kmeans_k_values: [4, 5, 6]
+wandb: 	latent_dim: 4
+wandb: 	leaky_relu_slope: 0.01
+wandb: 	learning_rate: 0.00692440691884721
+wandb: 	model_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/model_training_SLURM/artifacts/obj/md5/9a/5026db2161df3761cf884fc01cd090
+wandb: 	num_epochs: 100
+wandb: 	num_workers: 4
+wandb: 	optimizer: adam
+wandb: 	scheduler_factor: 0.1
+wandb: 	scheduler_patience: 10
+wandb: 	weight_decay: 6.12680524937952e-06
+wandb: Tracking run with wandb version 0.18.5
+wandb: Run data is saved locally in /home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/wandb/run-20241031_185837-amu90bh3
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run dutiful-sweep-14
+wandb: ⭐️ View project at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: 🧹 View sweep at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/sweeps/cwzycdl4
+wandb: 🚀 View run at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/amu90bh3
+/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py:32: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path, map_location=device)
+wandb: - 2.758 MB of 3.451 MB uploadedwandb: \ 3.451 MB of 3.451 MB uploadedwandb: | 3.451 MB of 3.451 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.1_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette ▁
+wandb:            hdbscan/minsize10hdbscan/silhouette ▁
+wandb:            hdbscan/minsize15hdbscan/silhouette ▁
+wandb:             hdbscan/minsize5hdbscan/silhouette ▁
+wandb:                             hdbscan/n_clusters █▁▁
+wandb:                            hdbscan/noise_ratio ▁▁█
+wandb:                       kmeans/calinski_harabasz █▁▅
+wandb:                                 kmeans/inertia █▅▁
+wandb:                              kmeans/silhouette ▂▁█
+wandb: 
+wandb: Run summary:
+wandb:                         best_dbscan_silhouette 1
+wandb:                        best_hdbscan_silhouette 0.41573
+wandb:                         best_kmeans_silhouette 0.24663
+wandb:                                completion_time 2024-10-31 19:00:00
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette 1
+wandb: dbscan/eps_0.1_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz 2037224723972096.0
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters 2
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio 0.96855
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz 4574.26465
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters 5
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio 0.95
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette 0.89884
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz 1454.44116
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters 6
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio 0.91532
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette 0.67983
+wandb: dbscan/eps_0.3_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.3_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.3_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.3_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz 154.35797
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters 16
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio 0.80242
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette 0.35716
+wandb:            hdbscan/minsize10hdbscan/silhouette 0.33062
+wandb:            hdbscan/minsize15hdbscan/silhouette 0.41573
+wandb:             hdbscan/minsize5hdbscan/silhouette 0.2366
+wandb:                             hdbscan/n_clusters 4
+wandb:                            hdbscan/noise_ratio 0.69355
+wandb:                       kmeans/calinski_harabasz 402.02261
+wandb:                                 kmeans/inertia 1886.69312
+wandb:                              kmeans/silhouette 0.24663
+wandb: 
+wandb: 🚀 View run dutiful-sweep-14 at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/amu90bh3
+wandb: ⭐️ View project at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: Synced 5 W&B file(s), 0 media file(s), 21 artifact file(s) and 4 other file(s)
+wandb: Find logs at: ./wandb/run-20241031_185837-amu90bh3/logs
+wandb: Agent Starting Run: 97dwq539 with config:
+wandb: 	batch_size: 40
+wandb: 	data_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/dataset
+wandb: 	dbscan_eps_values: [0.1, 0.2, 0.3]
+wandb: 	dbscan_min_samples: [5, 10, 15]
+wandb: 	dropout_conv: 0.23037448546520012
+wandb: 	dropout_fc: 0.42793365261644367
+wandb: 	hdbscan_min_sizes: [5, 10, 15]
+wandb: 	kmeans_k_values: [6, 9, 12]
+wandb: 	latent_dim: 4
+wandb: 	leaky_relu_slope: 0.01
+wandb: 	learning_rate: 0.00692440691884721
+wandb: 	model_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/model_training_SLURM/artifacts/obj/md5/9a/5026db2161df3761cf884fc01cd090
+wandb: 	num_epochs: 100
+wandb: 	num_workers: 4
+wandb: 	optimizer: adam
+wandb: 	scheduler_factor: 0.1
+wandb: 	scheduler_patience: 10
+wandb: 	weight_decay: 6.12680524937952e-06
+wandb: Tracking run with wandb version 0.18.5
+wandb: Run data is saved locally in /home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/wandb/run-20241031_190008-97dwq539
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run amber-sweep-15
+wandb: ⭐️ View project at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: 🧹 View sweep at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/sweeps/cwzycdl4
+wandb: 🚀 View run at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/97dwq539
+/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py:32: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path, map_location=device)
+wandb: - 2.963 MB of 3.472 MB uploadedwandb: \ 3.472 MB of 3.472 MB uploadedwandb: | 3.472 MB of 3.472 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.1_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette ▁
+wandb:            hdbscan/minsize10hdbscan/silhouette ▁
+wandb:            hdbscan/minsize15hdbscan/silhouette ▁
+wandb:             hdbscan/minsize5hdbscan/silhouette ▁
+wandb:                             hdbscan/n_clusters █▁▁
+wandb:                            hdbscan/noise_ratio ▁▁█
+wandb:                       kmeans/calinski_harabasz █▃▁
+wandb:                                 kmeans/inertia █▄▁
+wandb:                              kmeans/silhouette █▁▇
+wandb: 
+wandb: Run summary:
+wandb:                         best_dbscan_silhouette 1
+wandb:                        best_hdbscan_silhouette 0.41573
+wandb:                         best_kmeans_silhouette 0.24663
+wandb:                                completion_time 2024-10-31 19:01:15
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette 1
+wandb: dbscan/eps_0.1_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz 2037224723972096.0
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters 2
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio 0.96855
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz 4574.26465
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters 5
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio 0.95
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette 0.89884
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz 1454.44116
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters 6
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio 0.91532
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette 0.67983
+wandb: dbscan/eps_0.3_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.3_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.3_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.3_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz 154.35797
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters 16
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio 0.80242
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette 0.35716
+wandb:            hdbscan/minsize10hdbscan/silhouette 0.33062
+wandb:            hdbscan/minsize15hdbscan/silhouette 0.41573
+wandb:             hdbscan/minsize5hdbscan/silhouette 0.2366
+wandb:                             hdbscan/n_clusters 4
+wandb:                            hdbscan/noise_ratio 0.69355
+wandb:                       kmeans/calinski_harabasz 340.54007
+wandb:                                 kmeans/inertia 1224.55737
+wandb:                              kmeans/silhouette 0.24073
+wandb: 
+wandb: 🚀 View run amber-sweep-15 at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/97dwq539
+wandb: ⭐️ View project at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: Synced 5 W&B file(s), 0 media file(s), 21 artifact file(s) and 4 other file(s)
+wandb: Find logs at: ./wandb/run-20241031_190008-97dwq539/logs
+wandb: Sweep Agent: Waiting for job.
+wandb: Job received.
+wandb: Agent Starting Run: b5a2pa4y with config:
+wandb: 	batch_size: 40
+wandb: 	data_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/dataset
+wandb: 	dbscan_eps_values: [0.1, 0.2, 0.3]
+wandb: 	dbscan_min_samples: [5, 10, 15]
+wandb: 	dropout_conv: 0.23037448546520012
+wandb: 	dropout_fc: 0.42793365261644367
+wandb: 	hdbscan_min_sizes: [10, 15, 20]
+wandb: 	kmeans_k_values: [2, 3, 4]
+wandb: 	latent_dim: 4
+wandb: 	leaky_relu_slope: 0.01
+wandb: 	learning_rate: 0.00692440691884721
+wandb: 	model_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/model_training_SLURM/artifacts/obj/md5/9a/5026db2161df3761cf884fc01cd090
+wandb: 	num_epochs: 100
+wandb: 	num_workers: 4
+wandb: 	optimizer: adam
+wandb: 	scheduler_factor: 0.1
+wandb: 	scheduler_patience: 10
+wandb: 	weight_decay: 6.12680524937952e-06
+wandb: Tracking run with wandb version 0.18.5
+wandb: Run data is saved locally in /home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/wandb/run-20241031_190130-b5a2pa4y
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run wise-sweep-16
+wandb: ⭐️ View project at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: 🧹 View sweep at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/sweeps/cwzycdl4
+wandb: 🚀 View run at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/b5a2pa4y
+/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py:32: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path, map_location=device)
+wandb: - 2.846 MB of 3.421 MB uploadedwandb: \ 3.421 MB of 3.421 MB uploadedwandb: | 3.424 MB of 3.424 MB uploadedwandb: / 3.424 MB of 3.424 MB uploadedwandb: - 3.424 MB of 3.424 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.1_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette ▁
+wandb:            hdbscan/minsize10hdbscan/silhouette ▁
+wandb:            hdbscan/minsize15hdbscan/silhouette ▁
+wandb:            hdbscan/minsize20hdbscan/silhouette ▁
+wandb:                             hdbscan/n_clusters ██▁
+wandb:                            hdbscan/noise_ratio ▁██
+wandb:                       kmeans/calinski_harabasz █▄▁
+wandb:                                 kmeans/inertia █▃▁
+wandb:                              kmeans/silhouette █▅▁
+wandb: 
+wandb: Run summary:
+wandb:                         best_dbscan_silhouette 1
+wandb:                        best_hdbscan_silhouette 0.41573
+wandb:                         best_kmeans_silhouette 0.29277
+wandb:                                completion_time 2024-10-31 19:02:37
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette 1
+wandb: dbscan/eps_0.1_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz 2037224723972096.0
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters 2
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio 0.96855
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz 4574.26465
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters 5
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio 0.95
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette 0.89884
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz 1454.44116
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters 6
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio 0.91532
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette 0.67983
+wandb: dbscan/eps_0.3_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.3_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.3_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.3_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz 154.35797
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters 16
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio 0.80242
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette 0.35716
+wandb:            hdbscan/minsize10hdbscan/silhouette 0.33062
+wandb:            hdbscan/minsize15hdbscan/silhouette 0.41573
+wandb:            hdbscan/minsize20hdbscan/silhouette 0.38884
+wandb:                             hdbscan/n_clusters 3
+wandb:                            hdbscan/noise_ratio 0.69758
+wandb:                       kmeans/calinski_harabasz 421.32147
+wandb:                                 kmeans/inertia 2452.25781
+wandb:                              kmeans/silhouette 0.23405
+wandb: 
+wandb: 🚀 View run wise-sweep-16 at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/b5a2pa4y
+wandb: ⭐️ View project at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: Synced 5 W&B file(s), 0 media file(s), 23 artifact file(s) and 4 other file(s)
+wandb: Find logs at: ./wandb/run-20241031_190130-b5a2pa4y/logs
+wandb: Agent Starting Run: e6ebjqoo with config:
+wandb: 	batch_size: 40
+wandb: 	data_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/dataset
+wandb: 	dbscan_eps_values: [0.1, 0.2, 0.3]
+wandb: 	dbscan_min_samples: [5, 10, 15]
+wandb: 	dropout_conv: 0.23037448546520012
+wandb: 	dropout_fc: 0.42793365261644367
+wandb: 	hdbscan_min_sizes: [10, 15, 20]
+wandb: 	kmeans_k_values: [4, 5, 6]
+wandb: 	latent_dim: 4
+wandb: 	leaky_relu_slope: 0.01
+wandb: 	learning_rate: 0.00692440691884721
+wandb: 	model_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/model_training_SLURM/artifacts/obj/md5/9a/5026db2161df3761cf884fc01cd090
+wandb: 	num_epochs: 100
+wandb: 	num_workers: 4
+wandb: 	optimizer: adam
+wandb: 	scheduler_factor: 0.1
+wandb: 	scheduler_patience: 10
+wandb: 	weight_decay: 6.12680524937952e-06
+wandb: Tracking run with wandb version 0.18.5
+wandb: Run data is saved locally in /home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/wandb/run-20241031_190248-e6ebjqoo
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run stellar-sweep-17
+wandb: ⭐️ View project at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: 🧹 View sweep at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/sweeps/cwzycdl4
+wandb: 🚀 View run at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/e6ebjqoo
+/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py:32: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path, map_location=device)
+wandb: - 2.786 MB of 3.439 MB uploadedwandb: \ 3.439 MB of 3.439 MB uploadedwandb: | 3.439 MB of 3.439 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.1_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette ▁
+wandb:            hdbscan/minsize10hdbscan/silhouette ▁
+wandb:            hdbscan/minsize15hdbscan/silhouette ▁
+wandb:            hdbscan/minsize20hdbscan/silhouette ▁
+wandb:                             hdbscan/n_clusters ██▁
+wandb:                            hdbscan/noise_ratio ▁██
+wandb:                       kmeans/calinski_harabasz █▁▅
+wandb:                                 kmeans/inertia █▅▁
+wandb:                              kmeans/silhouette ▂▁█
+wandb: 
+wandb: Run summary:
+wandb:                         best_dbscan_silhouette 1
+wandb:                        best_hdbscan_silhouette 0.41573
+wandb:                         best_kmeans_silhouette 0.24663
+wandb:                                completion_time 2024-10-31 19:03:54
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette 1
+wandb: dbscan/eps_0.1_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz 2037224723972096.0
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters 2
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio 0.96855
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz 4574.26465
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters 5
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio 0.95
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette 0.89884
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz 1454.44116
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters 6
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio 0.91532
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette 0.67983
+wandb: dbscan/eps_0.3_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.3_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.3_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.3_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz 154.35797
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters 16
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio 0.80242
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette 0.35716
+wandb:            hdbscan/minsize10hdbscan/silhouette 0.33062
+wandb:            hdbscan/minsize15hdbscan/silhouette 0.41573
+wandb:            hdbscan/minsize20hdbscan/silhouette 0.38884
+wandb:                             hdbscan/n_clusters 3
+wandb:                            hdbscan/noise_ratio 0.69758
+wandb:                       kmeans/calinski_harabasz 402.02261
+wandb:                                 kmeans/inertia 1886.69312
+wandb:                              kmeans/silhouette 0.24663
+wandb: 
+wandb: 🚀 View run stellar-sweep-17 at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/e6ebjqoo
+wandb: ⭐️ View project at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: Synced 5 W&B file(s), 0 media file(s), 21 artifact file(s) and 4 other file(s)
+wandb: Find logs at: ./wandb/run-20241031_190248-e6ebjqoo/logs
+wandb: Agent Starting Run: euy62tx4 with config:
+wandb: 	batch_size: 40
+wandb: 	data_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/dataset
+wandb: 	dbscan_eps_values: [0.1, 0.2, 0.3]
+wandb: 	dbscan_min_samples: [5, 10, 15]
+wandb: 	dropout_conv: 0.23037448546520012
+wandb: 	dropout_fc: 0.42793365261644367
+wandb: 	hdbscan_min_sizes: [10, 15, 20]
+wandb: 	kmeans_k_values: [6, 9, 12]
+wandb: 	latent_dim: 4
+wandb: 	leaky_relu_slope: 0.01
+wandb: 	learning_rate: 0.00692440691884721
+wandb: 	model_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/model_training_SLURM/artifacts/obj/md5/9a/5026db2161df3761cf884fc01cd090
+wandb: 	num_epochs: 100
+wandb: 	num_workers: 4
+wandb: 	optimizer: adam
+wandb: 	scheduler_factor: 0.1
+wandb: 	scheduler_patience: 10
+wandb: 	weight_decay: 6.12680524937952e-06
+wandb: Tracking run with wandb version 0.18.5
+wandb: Run data is saved locally in /home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/wandb/run-20241031_190400-euy62tx4
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run apricot-sweep-18
+wandb: ⭐️ View project at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: 🧹 View sweep at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/sweeps/cwzycdl4
+wandb: 🚀 View run at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/euy62tx4
+/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py:32: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path, map_location=device)
+wandb: - 2.697 MB of 3.460 MB uploadedwandb: \ 3.460 MB of 3.460 MB uploadedwandb: | 3.460 MB of 3.460 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.1_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_15/silhouette ▁
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz ▁
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters ▁
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio ▁
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette ▁
+wandb:            hdbscan/minsize10hdbscan/silhouette ▁
+wandb:            hdbscan/minsize15hdbscan/silhouette ▁
+wandb:            hdbscan/minsize20hdbscan/silhouette ▁
+wandb:                             hdbscan/n_clusters ██▁
+wandb:                            hdbscan/noise_ratio ▁██
+wandb:                       kmeans/calinski_harabasz █▃▁
+wandb:                                 kmeans/inertia █▄▁
+wandb:                              kmeans/silhouette █▁▇
+wandb: 
+wandb: Run summary:
+wandb:                         best_dbscan_silhouette 1
+wandb:                        best_hdbscan_silhouette 0.41573
+wandb:                         best_kmeans_silhouette 0.24663
+wandb:                                completion_time 2024-10-31 19:05:14
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette 1
+wandb: dbscan/eps_0.1_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.1_minsamples_5/calinski_harabasz 2037224723972096.0
+wandb:         dbscan/eps_0.1_minsamples_5/n_clusters 2
+wandb:        dbscan/eps_0.1_minsamples_5/noise_ratio 0.96855
+wandb:         dbscan/eps_0.1_minsamples_5/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.2_minsamples_5/calinski_harabasz 4574.26465
+wandb:         dbscan/eps_0.2_minsamples_5/n_clusters 5
+wandb:        dbscan/eps_0.2_minsamples_5/noise_ratio 0.95
+wandb:         dbscan/eps_0.2_minsamples_5/silhouette 0.89884
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz 1454.44116
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters 6
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio 0.91532
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette 0.67983
+wandb: dbscan/eps_0.3_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.3_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.3_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.3_minsamples_15/silhouette 1
+wandb:  dbscan/eps_0.3_minsamples_5/calinski_harabasz 154.35797
+wandb:         dbscan/eps_0.3_minsamples_5/n_clusters 16
+wandb:        dbscan/eps_0.3_minsamples_5/noise_ratio 0.80242
+wandb:         dbscan/eps_0.3_minsamples_5/silhouette 0.35716
+wandb:            hdbscan/minsize10hdbscan/silhouette 0.33062
+wandb:            hdbscan/minsize15hdbscan/silhouette 0.41573
+wandb:            hdbscan/minsize20hdbscan/silhouette 0.38884
+wandb:                             hdbscan/n_clusters 3
+wandb:                            hdbscan/noise_ratio 0.69758
+wandb:                       kmeans/calinski_harabasz 340.54007
+wandb:                                 kmeans/inertia 1224.55737
+wandb:                              kmeans/silhouette 0.24073
+wandb: 
+wandb: 🚀 View run apricot-sweep-18 at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/euy62tx4
+wandb: ⭐️ View project at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: Synced 5 W&B file(s), 0 media file(s), 21 artifact file(s) and 4 other file(s)
+wandb: Find logs at: ./wandb/run-20241031_190400-euy62tx4/logs
+wandb: Agent Starting Run: a0dgzbdm with config:
+wandb: 	batch_size: 40
+wandb: 	data_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/dataset
+wandb: 	dbscan_eps_values: [0.1, 0.2, 0.3]
+wandb: 	dbscan_min_samples: [10, 15, 20]
+wandb: 	dropout_conv: 0.23037448546520012
+wandb: 	dropout_fc: 0.42793365261644367
+wandb: 	hdbscan_min_sizes: [3, 5, 10]
+wandb: 	kmeans_k_values: [2, 3, 4]
+wandb: 	latent_dim: 4
+wandb: 	leaky_relu_slope: 0.01
+wandb: 	learning_rate: 0.00692440691884721
+wandb: 	model_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/model_training_SLURM/artifacts/obj/md5/9a/5026db2161df3761cf884fc01cd090
+wandb: 	num_epochs: 100
+wandb: 	num_workers: 4
+wandb: 	optimizer: adam
+wandb: 	scheduler_factor: 0.1
+wandb: 	scheduler_patience: 10
+wandb: 	weight_decay: 6.12680524937952e-06
+wandb: Tracking run with wandb version 0.18.5
+wandb: Run data is saved locally in /home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/wandb/run-20241031_190523-a0dgzbdm
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run cerulean-sweep-19
+wandb: ⭐️ View project at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: 🧹 View sweep at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/sweeps/cwzycdl4
+wandb: 🚀 View run at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/a0dgzbdm
+/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py:32: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path, map_location=device)
+wandb: - 2.696 MB of 2.766 MB uploadedwandb: \ 2.766 MB of 2.766 MB uploadedwandb: | 2.767 MB of 2.767 MB uploadedwandb: / 2.767 MB of 2.767 MB uploadedwandb: - 2.770 MB of 2.770 MB uploadedwandb: \ 2.775 MB of 2.775 MB uploadedwandb: | 2.775 MB of 2.775 MB uploadedwandb: / 2.775 MB of 2.775 MB uploadedwandb: - 2.775 MB of 2.775 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.1_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_15/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_15/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_15/silhouette ▁
+wandb:            hdbscan/minsize10hdbscan/silhouette ▁
+wandb:             hdbscan/minsize3hdbscan/silhouette ▁
+wandb:             hdbscan/minsize5hdbscan/silhouette ▁
+wandb:                             hdbscan/n_clusters █▂▁
+wandb:                            hdbscan/noise_ratio ▁██
+wandb:                       kmeans/calinski_harabasz █▄▁
+wandb:                                 kmeans/inertia █▃▁
+wandb:                              kmeans/silhouette █▅▁
+wandb: 
+wandb: Run summary:
+wandb:                         best_dbscan_silhouette 1
+wandb:                        best_hdbscan_silhouette 0.3614
+wandb:                         best_kmeans_silhouette 0.29277
+wandb:                                completion_time 2024-10-31 19:06:31
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette 1
+wandb: dbscan/eps_0.1_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_15/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_15/silhouette 1
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz 1454.44116
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters 6
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio 0.91532
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette 0.67983
+wandb: dbscan/eps_0.3_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.3_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.3_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.3_minsamples_15/silhouette 1
+wandb:            hdbscan/minsize10hdbscan/silhouette 0.33062
+wandb:             hdbscan/minsize3hdbscan/silhouette 0.3614
+wandb:             hdbscan/minsize5hdbscan/silhouette 0.2366
+wandb:                             hdbscan/n_clusters 4
+wandb:                            hdbscan/noise_ratio 0.57419
+wandb:                       kmeans/calinski_harabasz 421.32147
+wandb:                                 kmeans/inertia 2452.25781
+wandb:                              kmeans/silhouette 0.23405
+wandb: 
+wandb: 🚀 View run cerulean-sweep-19 at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/a0dgzbdm
+wandb: ⭐️ View project at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: Synced 5 W&B file(s), 0 media file(s), 20 artifact file(s) and 4 other file(s)
+wandb: Find logs at: ./wandb/run-20241031_190523-a0dgzbdm/logs
+wandb: Agent Starting Run: 87pb2k87 with config:
+wandb: 	batch_size: 40
+wandb: 	data_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/dataset
+wandb: 	dbscan_eps_values: [0.1, 0.2, 0.3]
+wandb: 	dbscan_min_samples: [10, 15, 20]
+wandb: 	dropout_conv: 0.23037448546520012
+wandb: 	dropout_fc: 0.42793365261644367
+wandb: 	hdbscan_min_sizes: [3, 5, 10]
+wandb: 	kmeans_k_values: [4, 5, 6]
+wandb: 	latent_dim: 4
+wandb: 	leaky_relu_slope: 0.01
+wandb: 	learning_rate: 0.00692440691884721
+wandb: 	model_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/model_training_SLURM/artifacts/obj/md5/9a/5026db2161df3761cf884fc01cd090
+wandb: 	num_epochs: 100
+wandb: 	num_workers: 4
+wandb: 	optimizer: adam
+wandb: 	scheduler_factor: 0.1
+wandb: 	scheduler_patience: 10
+wandb: 	weight_decay: 6.12680524937952e-06
+wandb: Tracking run with wandb version 0.18.5
+wandb: Run data is saved locally in /home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/wandb/run-20241031_190646-87pb2k87
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run tough-sweep-20
+wandb: ⭐️ View project at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: 🧹 View sweep at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/sweeps/cwzycdl4
+wandb: 🚀 View run at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/87pb2k87
+/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py:32: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path, map_location=device)
+wandb: - 2.786 MB of 2.786 MB uploadedwandb: \ 2.786 MB of 2.786 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.1_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.1_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.1_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.1_minsamples_15/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.2_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.2_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.2_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.2_minsamples_15/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette ▁
+wandb: dbscan/eps_0.3_minsamples_15/calinski_harabasz ▁
+wandb:        dbscan/eps_0.3_minsamples_15/n_clusters ▁
+wandb:       dbscan/eps_0.3_minsamples_15/noise_ratio ▁
+wandb:        dbscan/eps_0.3_minsamples_15/silhouette ▁
+wandb:            hdbscan/minsize10hdbscan/silhouette ▁
+wandb:             hdbscan/minsize3hdbscan/silhouette ▁
+wandb:             hdbscan/minsize5hdbscan/silhouette ▁
+wandb:                             hdbscan/n_clusters █▂▁
+wandb:                            hdbscan/noise_ratio ▁██
+wandb:                       kmeans/calinski_harabasz █▁▅
+wandb:                                 kmeans/inertia █▅▁
+wandb:                              kmeans/silhouette ▂▁█
+wandb: 
+wandb: Run summary:
+wandb:                         best_dbscan_silhouette 1
+wandb:                        best_hdbscan_silhouette 0.3614
+wandb:                         best_kmeans_silhouette 0.24663
+wandb:                                completion_time 2024-10-31 19:07:51
+wandb: dbscan/eps_0.1_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_10/silhouette 1
+wandb: dbscan/eps_0.1_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.1_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.1_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.1_minsamples_15/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_10/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_10/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_10/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_10/silhouette 1
+wandb: dbscan/eps_0.2_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.2_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.2_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.2_minsamples_15/silhouette 1
+wandb: dbscan/eps_0.3_minsamples_10/calinski_harabasz 1454.44116
+wandb:        dbscan/eps_0.3_minsamples_10/n_clusters 6
+wandb:       dbscan/eps_0.3_minsamples_10/noise_ratio 0.91532
+wandb:        dbscan/eps_0.3_minsamples_10/silhouette 0.67983
+wandb: dbscan/eps_0.3_minsamples_15/calinski_harabasz 2037224723972096.0
+wandb:        dbscan/eps_0.3_minsamples_15/n_clusters 2
+wandb:       dbscan/eps_0.3_minsamples_15/noise_ratio 0.96855
+wandb:        dbscan/eps_0.3_minsamples_15/silhouette 1
+wandb:            hdbscan/minsize10hdbscan/silhouette 0.33062
+wandb:             hdbscan/minsize3hdbscan/silhouette 0.3614
+wandb:             hdbscan/minsize5hdbscan/silhouette 0.2366
+wandb:                             hdbscan/n_clusters 4
+wandb:                            hdbscan/noise_ratio 0.57419
+wandb:                       kmeans/calinski_harabasz 402.02261
+wandb:                                 kmeans/inertia 1886.69312
+wandb:                              kmeans/silhouette 0.24663
+wandb: 
+wandb: 🚀 View run tough-sweep-20 at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/87pb2k87
+wandb: ⭐️ View project at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: Synced 5 W&B file(s), 0 media file(s), 18 artifact file(s) and 4 other file(s)
+wandb: Find logs at: ./wandb/run-20241031_190646-87pb2k87/logs

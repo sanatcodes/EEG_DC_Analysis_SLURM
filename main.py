@@ -1,6 +1,5 @@
 import wandb
 from config.sweep_config import SWEEP_CONFIG
-from dataloader import TopomapDataset
 from utils.experiment import run_clustering_analysis
 
 

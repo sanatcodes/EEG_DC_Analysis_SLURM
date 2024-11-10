@@ -1,0 +1,494 @@
+wandb: Using wandb-core as the SDK backend. Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: sanat-thukral (cognetive-load-research). Use `wandb login --relogin` to force relogin
+wandb: Agent Starting Run: ngxl3sj2 with config:
+wandb: 	batch_size: 40
+wandb: 	data_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/dataset
+wandb: 	dbscan_eps_values: [0.1, 0.2, 0.3]
+wandb: 	dbscan_min_samples: [3, 5, 10]
+wandb: 	dropout_conv: 0.23037448546520012
+wandb: 	dropout_fc: 0.42793365261644367
+wandb: 	hdbscan_min_sizes: [3, 5, 10]
+wandb: 	kmeans_k_values: [2, 3, 4]
+wandb: 	latent_dim: 4
+wandb: 	leaky_relu_slope: 0.01
+wandb: 	learning_rate: 0.00692440691884721
+wandb: 	model_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/model_training_SLURM/artifacts/obj/md5/9a/5026db2161df3761cf884fc01cd090
+wandb: 	num_epochs: 100
+wandb: 	num_workers: 4
+wandb: 	optimizer: adam
+wandb: 	scheduler_factor: 0.1
+wandb: 	scheduler_patience: 10
+wandb: 	weight_decay: 6.12680524937952e-06
+wandb: Tracking run with wandb version 0.18.5
+wandb: Run data is saved locally in /home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/wandb/run-20241031_183501-ngxl3sj2
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run crisp-sweep-1
+wandb: ⭐️ View project at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: 🧹 View sweep at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/sweeps/1f7c4tsb
+wandb: 🚀 View run at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/ngxl3sj2
+/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py:32: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path, map_location=device)
+Traceback (most recent call last):
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/main.py", line 12, in cluster
+    results = run_clustering_analysis(config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py", line 286, in run_clustering_analysis
+    model = load_model(
+            ^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py", line 32, in load_model
+    checkpoint = torch.load(model_path, map_location=device)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1360, in load
+    return _load(
+           ^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1848, in _load
+    result = unpickler.load()
+             ^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1812, in persistent_load
+    typed_storage = load_tensor(
+                    ^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1784, in load_tensor
+    wrap_storage=restore_location(storage, location),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1690, in restore_location
+    return default_restore_location(storage, str(map_location))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 601, in default_restore_location
+    result = fn(storage, location)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 540, in _deserialize
+    return obj.to(device=device)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/storage.py", line 279, in to
+    return _to(self, device, non_blocking)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/_utils.py", line 88, in _to
+    untyped_storage = torch.UntypedStorage(self.size(), device=device)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 GiB. GPU 0 has a total capacity of 10.75 GiB of which 113.62 MiB is free. Including non-PyTorch memory, this process has 10.64 GiB memory in use. Of the allocated memory 10.03 GiB is allocated by PyTorch, and 7.03 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+wandb: - 0.009 MB of 0.009 MB uploadedwandb: \ 0.009 MB of 0.009 MB uploadedwandb:                                                                                
+wandb: 🚀 View run crisp-sweep-1 at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/ngxl3sj2
+wandb: ⭐️ View project at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: Synced 5 W&B file(s), 0 media file(s), 2 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20241031_183501-ngxl3sj2/logs
+Run ngxl3sj2 errored:
+Traceback (most recent call last):
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+    self._function()
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/main.py", line 12, in cluster
+    results = run_clustering_analysis(config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py", line 286, in run_clustering_analysis
+    model = load_model(
+            ^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py", line 32, in load_model
+    checkpoint = torch.load(model_path, map_location=device)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1360, in load
+    return _load(
+           ^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1848, in _load
+    result = unpickler.load()
+             ^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1812, in persistent_load
+    typed_storage = load_tensor(
+                    ^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1784, in load_tensor
+    wrap_storage=restore_location(storage, location),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1690, in restore_location
+    return default_restore_location(storage, str(map_location))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 601, in default_restore_location
+    result = fn(storage, location)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 540, in _deserialize
+    return obj.to(device=device)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/storage.py", line 279, in to
+    return _to(self, device, non_blocking)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/_utils.py", line 88, in _to
+    untyped_storage = torch.UntypedStorage(self.size(), device=device)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 GiB. GPU 0 has a total capacity of 10.75 GiB of which 113.62 MiB is free. Including non-PyTorch memory, this process has 10.64 GiB memory in use. Of the allocated memory 10.03 GiB is allocated by PyTorch, and 7.03 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+wandb: ERROR Run ngxl3sj2 errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/main.py", line 12, in cluster
+wandb: ERROR     results = run_clustering_analysis(config)
+wandb: ERROR               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py", line 286, in run_clustering_analysis
+wandb: ERROR     model = load_model(
+wandb: ERROR             ^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py", line 32, in load_model
+wandb: ERROR     checkpoint = torch.load(model_path, map_location=device)
+wandb: ERROR                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1360, in load
+wandb: ERROR     return _load(
+wandb: ERROR            ^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1848, in _load
+wandb: ERROR     result = unpickler.load()
+wandb: ERROR              ^^^^^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1812, in persistent_load
+wandb: ERROR     typed_storage = load_tensor(
+wandb: ERROR                     ^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1784, in load_tensor
+wandb: ERROR     wrap_storage=restore_location(storage, location),
+wandb: ERROR                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1690, in restore_location
+wandb: ERROR     return default_restore_location(storage, str(map_location))
+wandb: ERROR            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 601, in default_restore_location
+wandb: ERROR     result = fn(storage, location)
+wandb: ERROR              ^^^^^^^^^^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 540, in _deserialize
+wandb: ERROR     return obj.to(device=device)
+wandb: ERROR            ^^^^^^^^^^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/storage.py", line 279, in to
+wandb: ERROR     return _to(self, device, non_blocking)
+wandb: ERROR            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/_utils.py", line 88, in _to
+wandb: ERROR     untyped_storage = torch.UntypedStorage(self.size(), device=device)
+wandb: ERROR                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+wandb: ERROR torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 GiB. GPU 0 has a total capacity of 10.75 GiB of which 113.62 MiB is free. Including non-PyTorch memory, this process has 10.64 GiB memory in use. Of the allocated memory 10.03 GiB is allocated by PyTorch, and 7.03 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+wandb: ERROR 
+wandb: Agent Starting Run: vof16u7a with config:
+wandb: 	batch_size: 40
+wandb: 	data_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/dataset
+wandb: 	dbscan_eps_values: [0.1, 0.2, 0.3]
+wandb: 	dbscan_min_samples: [3, 5, 10]
+wandb: 	dropout_conv: 0.23037448546520012
+wandb: 	dropout_fc: 0.42793365261644367
+wandb: 	hdbscan_min_sizes: [3, 5, 10]
+wandb: 	kmeans_k_values: [4, 5, 6]
+wandb: 	latent_dim: 4
+wandb: 	leaky_relu_slope: 0.01
+wandb: 	learning_rate: 0.00692440691884721
+wandb: 	model_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/model_training_SLURM/artifacts/obj/md5/9a/5026db2161df3761cf884fc01cd090
+wandb: 	num_epochs: 100
+wandb: 	num_workers: 4
+wandb: 	optimizer: adam
+wandb: 	scheduler_factor: 0.1
+wandb: 	scheduler_patience: 10
+wandb: 	weight_decay: 6.12680524937952e-06
+wandb: Tracking run with wandb version 0.18.5
+wandb: Run data is saved locally in /home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/wandb/run-20241031_183721-vof16u7a
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lemon-sweep-2
+wandb: ⭐️ View project at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: 🧹 View sweep at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/sweeps/1f7c4tsb
+wandb: 🚀 View run at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/vof16u7a
+/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py:32: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path, map_location=device)
+Traceback (most recent call last):
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/main.py", line 12, in cluster
+    results = run_clustering_analysis(config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py", line 286, in run_clustering_analysis
+    model = load_model(
+            ^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py", line 32, in load_model
+    checkpoint = torch.load(model_path, map_location=device)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1360, in load
+    return _load(
+           ^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1848, in _load
+    result = unpickler.load()
+             ^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1812, in persistent_load
+    typed_storage = load_tensor(
+                    ^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1784, in load_tensor
+    wrap_storage=restore_location(storage, location),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1690, in restore_location
+    return default_restore_location(storage, str(map_location))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 601, in default_restore_location
+    result = fn(storage, location)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 540, in _deserialize
+    return obj.to(device=device)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/storage.py", line 279, in to
+    return _to(self, device, non_blocking)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/_utils.py", line 88, in _to
+    untyped_storage = torch.UntypedStorage(self.size(), device=device)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 GiB. GPU 0 has a total capacity of 10.75 GiB of which 113.62 MiB is free. Including non-PyTorch memory, this process has 10.64 GiB memory in use. Of the allocated memory 10.04 GiB is allocated by PyTorch, and 221.00 KiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+wandb:                                                                                
+wandb: 🚀 View run lemon-sweep-2 at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/vof16u7a
+wandb: ⭐️ View project at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20241031_183721-vof16u7a/logs
+Run vof16u7a errored:
+Traceback (most recent call last):
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+    self._function()
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/main.py", line 12, in cluster
+    results = run_clustering_analysis(config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py", line 286, in run_clustering_analysis
+    model = load_model(
+            ^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py", line 32, in load_model
+    checkpoint = torch.load(model_path, map_location=device)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1360, in load
+    return _load(
+           ^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1848, in _load
+    result = unpickler.load()
+             ^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1812, in persistent_load
+    typed_storage = load_tensor(
+                    ^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1784, in load_tensor
+    wrap_storage=restore_location(storage, location),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1690, in restore_location
+    return default_restore_location(storage, str(map_location))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 601, in default_restore_location
+    result = fn(storage, location)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 540, in _deserialize
+    return obj.to(device=device)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/storage.py", line 279, in to
+    return _to(self, device, non_blocking)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/_utils.py", line 88, in _to
+    untyped_storage = torch.UntypedStorage(self.size(), device=device)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 GiB. GPU 0 has a total capacity of 10.75 GiB of which 113.62 MiB is free. Including non-PyTorch memory, this process has 10.64 GiB memory in use. Of the allocated memory 10.04 GiB is allocated by PyTorch, and 221.00 KiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+wandb: ERROR Run vof16u7a errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/main.py", line 12, in cluster
+wandb: ERROR     results = run_clustering_analysis(config)
+wandb: ERROR               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py", line 286, in run_clustering_analysis
+wandb: ERROR     model = load_model(
+wandb: ERROR             ^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py", line 32, in load_model
+wandb: ERROR     checkpoint = torch.load(model_path, map_location=device)
+wandb: ERROR                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1360, in load
+wandb: ERROR     return _load(
+wandb: ERROR            ^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1848, in _load
+wandb: ERROR     result = unpickler.load()
+wandb: ERROR              ^^^^^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1812, in persistent_load
+wandb: ERROR     typed_storage = load_tensor(
+wandb: ERROR                     ^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1784, in load_tensor
+wandb: ERROR     wrap_storage=restore_location(storage, location),
+wandb: ERROR                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1690, in restore_location
+wandb: ERROR     return default_restore_location(storage, str(map_location))
+wandb: ERROR            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 601, in default_restore_location
+wandb: ERROR     result = fn(storage, location)
+wandb: ERROR              ^^^^^^^^^^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 540, in _deserialize
+wandb: ERROR     return obj.to(device=device)
+wandb: ERROR            ^^^^^^^^^^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/storage.py", line 279, in to
+wandb: ERROR     return _to(self, device, non_blocking)
+wandb: ERROR            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/_utils.py", line 88, in _to
+wandb: ERROR     untyped_storage = torch.UntypedStorage(self.size(), device=device)
+wandb: ERROR                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+wandb: ERROR torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 GiB. GPU 0 has a total capacity of 10.75 GiB of which 113.62 MiB is free. Including non-PyTorch memory, this process has 10.64 GiB memory in use. Of the allocated memory 10.04 GiB is allocated by PyTorch, and 221.00 KiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+wandb: ERROR 
+wandb: Agent Starting Run: 8yd9cqlt with config:
+wandb: 	batch_size: 40
+wandb: 	data_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/dataset
+wandb: 	dbscan_eps_values: [0.1, 0.2, 0.3]
+wandb: 	dbscan_min_samples: [3, 5, 10]
+wandb: 	dropout_conv: 0.23037448546520012
+wandb: 	dropout_fc: 0.42793365261644367
+wandb: 	hdbscan_min_sizes: [3, 5, 10]
+wandb: 	kmeans_k_values: [6, 9, 12]
+wandb: 	latent_dim: 4
+wandb: 	leaky_relu_slope: 0.01
+wandb: 	learning_rate: 0.00692440691884721
+wandb: 	model_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/model_training_SLURM/artifacts/obj/md5/9a/5026db2161df3761cf884fc01cd090
+wandb: 	num_epochs: 100
+wandb: 	num_workers: 4
+wandb: 	optimizer: adam
+wandb: 	scheduler_factor: 0.1
+wandb: 	scheduler_patience: 10
+wandb: 	weight_decay: 6.12680524937952e-06
+wandb: Tracking run with wandb version 0.18.5
+wandb: Run data is saved locally in /home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/wandb/run-20241031_183747-8yd9cqlt
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run absurd-sweep-3
+wandb: ⭐️ View project at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: 🧹 View sweep at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/sweeps/1f7c4tsb
+wandb: 🚀 View run at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/8yd9cqlt
+/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py:32: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_path, map_location=device)
+Traceback (most recent call last):
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/main.py", line 12, in cluster
+    results = run_clustering_analysis(config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py", line 286, in run_clustering_analysis
+    model = load_model(
+            ^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py", line 32, in load_model
+    checkpoint = torch.load(model_path, map_location=device)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1360, in load
+    return _load(
+           ^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1848, in _load
+    result = unpickler.load()
+             ^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1812, in persistent_load
+    typed_storage = load_tensor(
+                    ^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1784, in load_tensor
+    wrap_storage=restore_location(storage, location),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1690, in restore_location
+    return default_restore_location(storage, str(map_location))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 601, in default_restore_location
+    result = fn(storage, location)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 540, in _deserialize
+    return obj.to(device=device)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/storage.py", line 279, in to
+    return _to(self, device, non_blocking)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/_utils.py", line 88, in _to
+    untyped_storage = torch.UntypedStorage(self.size(), device=device)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 GiB. GPU 0 has a total capacity of 10.75 GiB of which 91.62 MiB is free. Including non-PyTorch memory, this process has 10.66 GiB memory in use. Of the allocated memory 10.05 GiB is allocated by PyTorch, and 16.28 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+wandb:                                                                                
+wandb: 🚀 View run absurd-sweep-3 at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/8yd9cqlt
+wandb: ⭐️ View project at: https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20241031_183747-8yd9cqlt/logs
+Run 8yd9cqlt errored:
+Traceback (most recent call last):
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+    self._function()
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/main.py", line 12, in cluster
+    results = run_clustering_analysis(config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py", line 286, in run_clustering_analysis
+    model = load_model(
+            ^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py", line 32, in load_model
+    checkpoint = torch.load(model_path, map_location=device)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1360, in load
+    return _load(
+           ^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1848, in _load
+    result = unpickler.load()
+             ^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1812, in persistent_load
+    typed_storage = load_tensor(
+                    ^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1784, in load_tensor
+    wrap_storage=restore_location(storage, location),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1690, in restore_location
+    return default_restore_location(storage, str(map_location))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 601, in default_restore_location
+    result = fn(storage, location)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 540, in _deserialize
+    return obj.to(device=device)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/storage.py", line 279, in to
+    return _to(self, device, non_blocking)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/_utils.py", line 88, in _to
+    untyped_storage = torch.UntypedStorage(self.size(), device=device)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 GiB. GPU 0 has a total capacity of 10.75 GiB of which 91.62 MiB is free. Including non-PyTorch memory, this process has 10.66 GiB memory in use. Of the allocated memory 10.05 GiB is allocated by PyTorch, and 16.28 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+wandb: ERROR Run 8yd9cqlt errored:
+wandb: ERROR Traceback (most recent call last):
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/wandb/agents/pyagent.py", line 306, in _run_job
+wandb: ERROR     self._function()
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/main.py", line 12, in cluster
+wandb: ERROR     results = run_clustering_analysis(config)
+wandb: ERROR               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py", line 286, in run_clustering_analysis
+wandb: ERROR     model = load_model(
+wandb: ERROR             ^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/utils/experiment.py", line 32, in load_model
+wandb: ERROR     checkpoint = torch.load(model_path, map_location=device)
+wandb: ERROR                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1360, in load
+wandb: ERROR     return _load(
+wandb: ERROR            ^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1848, in _load
+wandb: ERROR     result = unpickler.load()
+wandb: ERROR              ^^^^^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1812, in persistent_load
+wandb: ERROR     typed_storage = load_tensor(
+wandb: ERROR                     ^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1784, in load_tensor
+wandb: ERROR     wrap_storage=restore_location(storage, location),
+wandb: ERROR                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 1690, in restore_location
+wandb: ERROR     return default_restore_location(storage, str(map_location))
+wandb: ERROR            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 601, in default_restore_location
+wandb: ERROR     result = fn(storage, location)
+wandb: ERROR              ^^^^^^^^^^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/serialization.py", line 540, in _deserialize
+wandb: ERROR     return obj.to(device=device)
+wandb: ERROR            ^^^^^^^^^^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/storage.py", line 279, in to
+wandb: ERROR     return _to(self, device, non_blocking)
+wandb: ERROR            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+wandb: ERROR   File "/home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/venv/lib/python3.11/site-packages/torch/_utils.py", line 88, in _to
+wandb: ERROR     untyped_storage = torch.UntypedStorage(self.size(), device=device)
+wandb: ERROR                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+wandb: ERROR torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 GiB. GPU 0 has a total capacity of 10.75 GiB of which 91.62 MiB is free. Including non-PyTorch memory, this process has 10.66 GiB memory in use. Of the allocated memory 10.05 GiB is allocated by PyTorch, and 16.28 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+wandb: ERROR 
+wandb: Agent Starting Run: 559d1ju1 with config:
+wandb: 	batch_size: 40
+wandb: 	data_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/dataset
+wandb: 	dbscan_eps_values: [0.1, 0.2, 0.3]
+wandb: 	dbscan_min_samples: [3, 5, 10]
+wandb: 	dropout_conv: 0.23037448546520012
+wandb: 	dropout_fc: 0.42793365261644367
+wandb: 	hdbscan_min_sizes: [5, 10, 15]
+wandb: 	kmeans_k_values: [2, 3, 4]
+wandb: 	latent_dim: 4
+wandb: 	leaky_relu_slope: 0.01
+wandb: 	learning_rate: 0.00692440691884721
+wandb: 	model_path: /home/CAMPUS/d18129674/eeg_microstate_deepclustering_experiment/model_training_SLURM/artifacts/obj/md5/9a/5026db2161df3761cf884fc01cd090
+wandb: 	num_epochs: 100
+wandb: 	num_workers: 4
+wandb: 	optimizer: adam
+wandb: 	scheduler_factor: 0.1
+wandb: 	scheduler_patience: 10
+wandb: 	weight_decay: 6.12680524937952e-06
+wandb: Tracking run with wandb version 0.18.5
+wandb: Run data is saved locally in /home/CAMPUS/d18129674/EEG_DC_Analysis_SLURM/wandb/run-20241031_183813-559d1ju1
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run snowy-sweep-4
+wandb: ⭐️ View project at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis
+wandb: 🧹 View sweep at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/sweeps/1f7c4tsb
+wandb: 🚀 View run at https://wandb.ai/cognetive-load-research/MS-deep-clustering-analysis/runs/559d1ju1
+slurmstepd-ADAPT-01: error: *** JOB 12421 ON ADAPT-01 CANCELLED AT 2024-10-31T18:38:19 ***
